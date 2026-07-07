@@ -1,5 +1,3 @@
-// color/palette.ts
-
 export const palette = {
   primary: {
     10: "#21005D",
@@ -11,10 +9,7 @@ export const palette = {
     70: "#B69DF8",
     80: "#D0BCFF",
     90: "#EADDFF",
-    95: "#F6EDFF",
-    99: "#FFFBFE",
   },
-
   neutral: {
     0: "#000000",
     10: "#1C1B1F",
@@ -26,9 +21,16 @@ export const palette = {
     99: "#FFFBFE",
     100: "#FFFFFF",
   },
-
+  success: {
+    40: "#2E7D32",
+    90: "#C8E6C9",
+  },
+  warning: {
+    40: "#ED6C02",
+    90: "#FFE0B2",
+  },
   error: {
-    40: "#B3261E",
-    90: "#F9DEDC",
+    40: "#D32F2F",
+    90: "#FFCDD2",
   },
 };
