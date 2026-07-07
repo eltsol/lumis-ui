@@ -1,0 +1,93 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lm-spacing-xs);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--lm-spacing-xs);
+  cursor: pointer;
+  font-size: var(--lm-typography-body1-font-size);
+  color: var(--lm-color-on-surface);
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkmark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--lm-color-outline);
+  border-radius: var(--lm-shape-xs);
+  transition: all var(--lm-motion-duration-short)
+    var(--lm-motion-easing-standard);
+  flex-shrink: 0;
+}
+
+.input:checked + .checkmark {
+  background: var(--lm-color-primary);
+  border-color: var(--lm-color-primary);
+}
+
+.input:indeterminate + .checkmark {
+  background: var(--lm-color-primary);
+  border-color: var(--lm-color-primary);
+}
+
+.input:focus-visible + .checkmark {
+  outline: 2px solid var(--lm-color-primary);
+  outline-offset: 2px;
+}
+
+.input:disabled + .checkmark {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  border-color: var(--lm-color-error);
+}
+
+.defaultIcon {
+  width: 12px;
+  height: 12px;
+  opacity: 0;
+  background: var(--lm-color-on-primary);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.input:checked + .checkmark .defaultIcon {
+  opacity: 1;
+}
+
+.input:indeterminate + .checkmark .defaultIcon {
+  clip-path: none;
+  width: 8px;
+  height: 2px;
+  background: var(--lm-color-on-primary);
+  opacity: 1;
+}
+
+.text {
+  font-weight: 400;
+}
+
+.helperText {
+  font-size: var(--lm-typography-caption-font-size);
+  color: var(--lm-color-on-surface);
+  opacity: 0.7;
+}
+
+.errorText {
+  font-size: var(--lm-typography-caption-font-size);
+  color: var(--lm-color-error);
+}
