@@ -1,0 +1,92 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--lm-spacing-xs);
+  border-radius: var(--lm-shape-sm);
+  border: 1px solid var(--lm-color-outline);
+  background: var(--lm-color-surface);
+  color: var(--lm-color-on-surface);
+  font-size: var(--lm-typography-body2-font-size);
+  cursor: default;
+  transition: all var(--lm-motion-duration-short)
+    var(--lm-motion-easing-standard);
+  white-space: nowrap;
+}
+
+/* VARIANTS */
+.primary {
+  background: var(--lm-color-primary);
+  color: var(--lm-color-on-primary);
+  border-color: var(--lm-color-primary);
+}
+
+.success {
+  background: var(--lm-color-success);
+  color: var(--lm-color-on-surface);
+  border-color: var(--lm-color-success);
+}
+
+.warning {
+  background: var(--lm-color-warning);
+  color: var(--lm-color-on-surface);
+  border-color: var(--lm-color-warning);
+}
+
+.error {
+  background: var(--lm-color-error);
+  color: var(--lm-color-on-error);
+  border-color: var(--lm-color-error);
+}
+
+/* SIZES */
+.sm {
+  padding: 2px var(--lm-spacing-xs);
+  font-size: var(--lm-typography-caption-font-size);
+}
+
+.md {
+  padding: var(--lm-spacing-xs) var(--lm-spacing-sm);
+}
+
+/* SELECTABLE */
+.selectable {
+  cursor: pointer;
+}
+
+.selectable:hover {
+  background: var(--lm-color-surface-variant);
+}
+
+.selected {
+  background: var(--lm-color-primary);
+  color: var(--lm-color-on-primary);
+  border-color: var(--lm-color-primary);
+}
+
+/* ICON */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+/* DELETE */
+.delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  border-radius: var(--lm-shape-full);
+  cursor: pointer;
+  font-size: 10px;
+  opacity: 0.7;
+  transition: opacity var(--lm-motion-duration-short);
+}
+
+.delete:hover {
+  opacity: 1;
+}

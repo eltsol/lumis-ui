@@ -1,0 +1,63 @@
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--lm-spacing-sm);
+  cursor: pointer;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.track {
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+  background: var(--lm-color-outline);
+  border-radius: var(--lm-shape-full);
+  position: relative;
+  transition: background var(--lm-motion-duration-short)
+    var(--lm-motion-easing-standard);
+  flex-shrink: 0;
+}
+
+.thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: var(--lm-color-surface);
+  border-radius: var(--lm-shape-full);
+  transition: transform var(--lm-motion-duration-short)
+    var(--lm-motion-easing-emphasized);
+  box-shadow: var(--lm-elevation-level1);
+}
+
+.input:checked + .track {
+  background: var(--lm-color-primary);
+}
+
+.input:checked + .track .thumb {
+  transform: translateX(16px);
+  background: var(--lm-color-on-primary);
+}
+
+.input:focus-visible + .track {
+  outline: 2px solid var(--lm-color-primary);
+  outline-offset: 2px;
+}
+
+.input:disabled + .track {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.text {
+  font-size: var(--lm-typography-body1-font-size);
+  color: var(--lm-color-on-surface);
+  font-weight: 400;
+}

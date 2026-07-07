@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap");
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-family: "Roboto", system-ui, -apple-system, sans-serif;
 
   /* Lumis Design Tokens */
   --lm-color-primary: #6750a4;
@@ -79,6 +82,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
+  font-family: var(--font-family);
 }
 
 * {

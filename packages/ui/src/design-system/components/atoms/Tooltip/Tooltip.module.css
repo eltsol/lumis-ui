@@ -1,0 +1,52 @@
+.wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  padding: var(--lm-spacing-xs) var(--lm-spacing-sm);
+  background: var(--lm-color-on-surface);
+  color: var(--lm-color-surface);
+  border-radius: var(--lm-shape-xs);
+  font-size: var(--lm-typography-caption-font-size);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--lm-motion-duration-short)
+    var(--lm-motion-easing-standard);
+  z-index: 1000;
+}
+
+.visible .tooltip {
+  opacity: 1;
+}
+
+/* PLACEMENTS */
+.top .tooltip {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 6px;
+}
+
+.bottom .tooltip {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 6px;
+}
+
+.left .tooltip {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 6px;
+}
+
+.right .tooltip {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 6px;
+}

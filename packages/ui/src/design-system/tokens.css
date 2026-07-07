@@ -1,7 +1,12 @@
 /* Design System CSS Custom Properties */
 /* These are generated from @lumis-ui/tokens and applied via ThemeProvider */
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap");
+
 :root {
+  /* Font */
+  --lm-font-family: "Roboto", system-ui, -apple-system, sans-serif;
+
   /* Colors */
   --lm-color-primary: #6750a4;
   --lm-color-on-primary: #ffffff;
@@ -66,4 +71,8 @@
   --lm-motion-duration-long: 400ms;
   --lm-motion-easing-standard: ease;
   --lm-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+}
+
+[data-lumis-theme] {
+  font-family: var(--lm-font-family);
 }
