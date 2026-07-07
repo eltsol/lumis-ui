@@ -1,0 +1,34 @@
+.card {
+  border-radius: var(--lm-shape-xs);
+  background: var(--lm-color-surface);
+  border: 1px solid var(--lm-color-outline);
+  color: var(--lm-color-on-surface);
+}
+
+/* PADDING SYSTEM */
+.none {
+  padding: 0;
+}
+
+.sm {
+  padding: var(--lm-spacing-sm);
+}
+
+.md {
+  padding: var(--lm-spacing-md);
+}
+
+.lg {
+  padding: var(--lm-spacing-lg);
+}
+
+/* STATES */
+.hoverable:hover {
+  box-shadow: var(--lm-elevation-level2);
+  transition: box-shadow var(--lm-motion-duration-short)
+    var(--lm-motion-easing-standard);
+}
+
+.clickable {
+  cursor: pointer;
+}
