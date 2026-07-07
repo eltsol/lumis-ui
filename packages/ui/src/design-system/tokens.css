@@ -1,0 +1,69 @@
+/* Design System CSS Custom Properties */
+/* These are generated from @lumis-ui/tokens and applied via ThemeProvider */
+
+:root {
+  /* Colors */
+  --lm-color-primary: #6750a4;
+  --lm-color-on-primary: #ffffff;
+  --lm-color-surface: #fffbfe;
+  --lm-color-surface-variant: #f4eff4;
+  --lm-color-on-surface: #1c1b1f;
+  --lm-color-outline: #cac4d0;
+  --lm-color-success: #2e7d32;
+  --lm-color-warning: #ed6c02;
+  --lm-color-error: #d32f2f;
+  --lm-color-on-error: #ffffff;
+  --lm-color-background: #ffffff;
+
+  /* Spacing */
+  --lm-spacing-none: 0px;
+  --lm-spacing-xs: 4px;
+  --lm-spacing-sm: 8px;
+  --lm-spacing-md: 16px;
+  --lm-spacing-lg: 24px;
+  --lm-spacing-xl: 32px;
+  --lm-spacing-xxl: 48px;
+
+  /* Shape */
+  --lm-shape-none: 0;
+  --lm-shape-xs: 4px;
+  --lm-shape-sm: 8px;
+  --lm-shape-md: 12px;
+  --lm-shape-lg: 16px;
+  --lm-shape-xl: 28px;
+  --lm-shape-full: 9999px;
+
+  /* Elevation */
+  --lm-elevation-level0: none;
+  --lm-elevation-level1: 0 1px 2px rgba(0, 0, 0, 0.12);
+  --lm-elevation-level2: 0 2px 6px rgba(0, 0, 0, 0.16);
+  --lm-elevation-level3: 0 4px 10px rgba(0, 0, 0, 0.18);
+  --lm-elevation-level4: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+  /* Typography */
+  --lm-typography-h1-font-size: 32px;
+  --lm-typography-h1-font-weight: 700;
+  --lm-typography-h1-line-height: 40px;
+  --lm-typography-h2-font-size: 28px;
+  --lm-typography-h2-font-weight: 600;
+  --lm-typography-h2-line-height: 36px;
+  --lm-typography-h3-font-size: 24px;
+  --lm-typography-h3-font-weight: 600;
+  --lm-typography-h3-line-height: 32px;
+  --lm-typography-body1-font-size: 14px;
+  --lm-typography-body1-font-weight: 400;
+  --lm-typography-body1-line-height: 20px;
+  --lm-typography-body2-font-size: 12px;
+  --lm-typography-body2-font-weight: 400;
+  --lm-typography-body2-line-height: 16px;
+  --lm-typography-caption-font-size: 11px;
+  --lm-typography-caption-font-weight: 400;
+  --lm-typography-caption-line-height: 14px;
+
+  /* Motion */
+  --lm-motion-duration-short: 150ms;
+  --lm-motion-duration-medium: 250ms;
+  --lm-motion-duration-long: 400ms;
+  --lm-motion-easing-standard: ease;
+  --lm-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+}
