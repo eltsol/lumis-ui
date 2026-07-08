@@ -45,4 +45,10 @@
       background: currentColor;
     }
   }
+  &--dot-only {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border-radius: 50%;
+  }
 }
