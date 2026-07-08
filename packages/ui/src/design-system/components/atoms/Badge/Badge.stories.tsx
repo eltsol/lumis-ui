@@ -34,12 +34,7 @@ export const Error = {
 };
 
 export const DotOnly = {
-  render: () => (
-    <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-      <Badge variant="primary" dotOnly />
-      <Badge variant="success" dotOnly />
-      <Badge variant="warning" dotOnly />
-      <Badge variant="error" dotOnly />
-    </div>
-  ),
+  args: {
+    dotOnly: true,
+  },
 };
