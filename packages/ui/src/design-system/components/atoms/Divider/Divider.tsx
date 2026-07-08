@@ -7,8 +7,8 @@ export const Divider = ({
   ...props
 }: DividerProps) => {
   const dividerClassName = [
-    "Divider Divider__root",
-    `Divider--${orientation}`,
+    "divider divider__root",
+    `divider--${orientation}`,
     className,
   ]
     .filter(Boolean)

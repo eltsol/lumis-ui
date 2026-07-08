@@ -1,4 +1,4 @@
-.Tabs {
+.tabs {
   &__root {
     display: inline-flex;
     border-bottom: 1px solid var(--lm-color-outline);
@@ -6,7 +6,7 @@
   }
   &--fullWidth {
     width: 100%;
-    .Tabs__tab {
+    .tabs__tab {
       flex: 1;
     }
   }

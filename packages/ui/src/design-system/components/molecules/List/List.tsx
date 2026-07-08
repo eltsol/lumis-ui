@@ -9,8 +9,8 @@ export const List = ({
   ...props
 }: ListProps) => {
   const listClassName = [
-    "List List__root",
-    dense ? "List--dense" : "",
+    "list list__root",
+    dense ? "list--dense" : "",
     className,
   ]
     .filter(Boolean)
@@ -21,22 +21,22 @@ export const List = ({
       {items.map((item, index) => (
         <li
           key={index}
-          className={`List__item ${item.selected ? "List__item--selected" : ""} ${item.disabled ? "List__item--disabled" : ""}`}
+          className={`list__item ${item.selected ? "list__item--selected" : ""} ${item.disabled ? "list__item--disabled" : ""}`}
           onClick={() =>
             !item.disabled && (item.onClick || onItemClick)?.(index)
           }
         >
           {item.leading && (
-            <span className="List__leading">{item.leading}</span>
+            <span className="list__leading">{item.leading}</span>
           )}
-          <div className="List__content">
-            <span className="List__label">{item.label}</span>
+          <div className="list__content">
+            <span className="list__label">{item.label}</span>
             {item.secondary && (
-              <span className="List__secondary">{item.secondary}</span>
+              <span className="list__secondary">{item.secondary}</span>
             )}
           </div>
           {item.trailing && (
-            <span className="List__trailing">{item.trailing}</span>
+            <span className="list__trailing">{item.trailing}</span>
           )}
         </li>
       ))}

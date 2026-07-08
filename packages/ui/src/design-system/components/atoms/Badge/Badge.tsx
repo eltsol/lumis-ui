@@ -10,10 +10,10 @@ export const Badge = ({
   ...props
 }: BadgeProps) => {
   const badgeClassName = [
-    "Badge Badge__root",
-    `Badge--${variant}`,
-    `Badge--${size}`,
-    dot ? "Badge--dot" : "",
+    "badge badge__root",
+    `badge--${variant}`,
+    `badge--${size}`,
+    dot ? "badge--dot" : "",
     className,
   ]
     .filter(Boolean)

@@ -10,10 +10,10 @@ export const Container = ({
   ...props
 }: ContainerProps) => {
   const containerClassName = [
-    "Container Container__root",
-    `Container--${maxWidth}`,
-    `Container--${padding}`,
-    centered ? "Container--centered" : "",
+    "container container__root",
+    `container--${maxWidth}`,
+    `container--${padding}`,
+    centered ? "container--centered" : "",
     className,
   ]
     .filter(Boolean)

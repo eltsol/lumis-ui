@@ -1,4 +1,4 @@
-.Tooltip {
+.tooltip {
   &__wrapper {
     display: inline-block;
     position: relative;
@@ -18,12 +18,12 @@
     z-index: 1000;
   }
   &--visible {
-    .Tooltip__root {
+    .tooltip__root {
       opacity: 1;
     }
   }
   &--top {
-    .Tooltip__root {
+    .tooltip__root {
       bottom: 100%;
       left: 50%;
       transform: translateX(-50%);
@@ -31,7 +31,7 @@
     }
   }
   &--bottom {
-    .Tooltip__root {
+    .tooltip__root {
       top: 100%;
       left: 50%;
       transform: translateX(-50%);
@@ -39,7 +39,7 @@
     }
   }
   &--left {
-    .Tooltip__root {
+    .tooltip__root {
       right: 100%;
       top: 50%;
       transform: translateY(-50%);
@@ -47,7 +47,7 @@
     }
   }
   &--right {
-    .Tooltip__root {
+    .tooltip__root {
       left: 100%;
       top: 50%;
       transform: translateY(-50%);

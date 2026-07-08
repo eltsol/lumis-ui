@@ -1,4 +1,4 @@
-.Checkbox {
+.checkbox {
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -30,19 +30,19 @@
       var(--lm-motion-easing-standard);
     flex-shrink: 0;
   }
-  &__input:checked + .Checkbox__checkmark {
+  &__input:checked + .checkbox__checkmark {
     background: var(--lm-color-primary);
     border-color: var(--lm-color-primary);
   }
-  &__input:indeterminate + .Checkbox__checkmark {
+  &__input:indeterminate + .checkbox__checkmark {
     background: var(--lm-color-primary);
     border-color: var(--lm-color-primary);
   }
-  &__input:focus-visible + .Checkbox__checkmark {
+  &__input:focus-visible + .checkbox__checkmark {
     outline: 2px solid var(--lm-color-primary);
     outline-offset: 2px;
   }
-  &__input:disabled + .Checkbox__checkmark {
+  &__input:disabled + .checkbox__checkmark {
     opacity: 0.5;
     cursor: not-allowed;
   }
@@ -56,10 +56,10 @@
     background: var(--lm-color-on-primary);
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   }
-  &__input:checked + .Checkbox__checkmark .Checkbox__defaultIcon {
+  &__input:checked + .checkbox__checkmark .checkbox__defaultIcon {
     opacity: 1;
   }
-  &__input:indeterminate + .Checkbox__checkmark .Checkbox__defaultIcon {
+  &__input:indeterminate + .checkbox__checkmark .checkbox__defaultIcon {
     clip-path: none;
     width: 8px;
     height: 2px;

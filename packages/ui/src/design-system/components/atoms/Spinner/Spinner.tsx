@@ -7,7 +7,7 @@ export const Spinner = ({
   className,
   ...props
 }: SpinnerProps) => {
-  const spinnerClassName = ["Spinner Spinner__wrapper", className]
+  const spinnerClassName = ["spinner spinner__wrapper", className]
     .filter(Boolean)
     .join(" ");
 
@@ -18,8 +18,8 @@ export const Spinner = ({
       aria-label={label || "Loading"}
       {...props}
     >
-      <span className={`Spinner__root Spinner--${size}`} />
-      {label && <span className="Spinner__label">{label}</span>}
+      <span className={`spinner__root spinner--${size}`} />
+      {label && <span className="spinner__label">{label}</span>}
     </div>
   );
 };

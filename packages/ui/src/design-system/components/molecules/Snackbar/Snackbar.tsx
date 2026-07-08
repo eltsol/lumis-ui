@@ -29,16 +29,16 @@ export const Snackbar = ({
   if (!isOpen) return null;
 
   return (
-    <div className="Snackbar Snackbar__root">
-      <span className="Snackbar__message">{message}</span>
+    <div className="snackbar snackbar__root">
+      <span className="snackbar__message">{message}</span>
       {actionLabel && (
-        <button className="Snackbar__action" onClick={onAction}>
+        <button className="snackbar__action" onClick={onAction}>
           {actionLabel}
         </button>
       )}
       {onClose && !actionLabel && (
         <button
-          className="Snackbar__close"
+          className="snackbar__close"
           onClick={onClose}
           aria-label="Close"
         >

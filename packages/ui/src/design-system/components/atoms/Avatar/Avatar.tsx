@@ -19,14 +19,14 @@ export const Avatar = ({
         .slice(0, 2)
     : "";
 
-  const avatarClassName = ["Avatar Avatar__root", `Avatar--${size}`, className]
+  const avatarClassName = ["avatar avatar__root", `avatar--${size}`, className]
     .filter(Boolean)
     .join(" ");
 
   if (src) {
     return (
       <span className={avatarClassName} {...props}>
-        <img className="Avatar__image" src={src} alt={alt} />
+        <img className="avatar__image" src={src} alt={alt} />
       </span>
     );
   }

@@ -28,7 +28,7 @@ export const Typography = ({
   const Tag = getTag();
 
   return (
-    <Tag className={`Typography--${variant}`} {...props}>
+    <Tag className={`typography typography--${variant}`} {...props}>
       {children}
     </Tag>
   );

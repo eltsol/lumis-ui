@@ -14,11 +14,11 @@ export const Chip = ({
   ...props
 }: ChipProps) => {
   const chipClassName = [
-    "Chip Chip__root",
-    `Chip--${variant}`,
-    `Chip--${size}`,
-    selectable ? "Chip--selectable" : "",
-    selected ? "Chip--selected" : "",
+    "chip chip__root",
+    `chip--${variant}`,
+    `chip--${size}`,
+    selectable ? "chip--selectable" : "",
+    selected ? "chip--selected" : "",
     className,
   ]
     .filter(Boolean)
@@ -26,10 +26,10 @@ export const Chip = ({
 
   return (
     <span className={chipClassName} onClick={onClick} {...props}>
-      {icon && <span className="Chip__icon">{icon}</span>}
-      <span className="Chip__label">{label}</span>
+      {icon && <span className="chip__icon">{icon}</span>}
+      <span className="chip__label">{label}</span>
       {onDelete && (
-        <button className="Chip__delete" onClick={onDelete} aria-label="Delete">
+        <button className="chip__delete" onClick={onDelete} aria-label="Delete">
           ✕
         </button>
       )}

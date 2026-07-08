@@ -13,13 +13,13 @@ export const Select = ({
   ...props
 }: SelectProps) => {
   return (
-    <div className={`Select__wrapper ${fullWidth ? "Select--fullWidth" : ""}`}>
-      {label && <label className="Select__label">{label}</label>}
+    <div className={`select__wrapper ${fullWidth ? "select--fullWidth" : ""}`}>
+      {label && <label className="select__label">{label}</label>}
 
       <div
-        className={`Select__selectContainer ${error ? "Select__selectContainer--error" : ""}`}
+        className={`select__selectContainer ${error ? "select__selectContainer--error" : ""}`}
       >
-        <select className="Select__select" {...props}>
+        <select className="select__select" {...props}>
           {placeholder && (
             <option value="" disabled>
               {placeholder}
@@ -36,13 +36,13 @@ export const Select = ({
           ))}
           {children}
         </select>
-        <span className="Select__arrow" />
+        <span className="select__arrow" />
       </div>
 
       {error && errorMessage ? (
-        <span className="Select__errorText">{errorMessage}</span>
+        <span className="select__errorText">{errorMessage}</span>
       ) : (
-        helperText && <span className="Select__helperText">{helperText}</span>
+        helperText && <span className="select__helperText">{helperText}</span>
       )}
     </div>
   );

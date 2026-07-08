@@ -1,4 +1,4 @@
-.Button {
+.button {
   &__root {
     display: inline-flex;
     align-items: center;
@@ -42,7 +42,7 @@
     padding: var(--lm-spacing-md) var(--lm-spacing-lg);
     font-size: 16px;
   }
-  &--fullWidth {
+  &--fullwidth {
     width: 100%;
   }
 

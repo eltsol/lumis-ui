@@ -15,9 +15,9 @@ export const Tooltip = ({
   const isVisible = isControlled ? visibleProp : visible;
 
   const tooltipClassName = [
-    "Tooltip Tooltip__wrapper",
-    `Tooltip--${placement}`,
-    isVisible ? "Tooltip--visible" : "",
+    "tooltip tooltip__wrapper",
+    `tooltip--${placement}`,
+    isVisible ? "tooltip--visible" : "",
     className,
   ]
     .filter(Boolean)
@@ -31,7 +31,7 @@ export const Tooltip = ({
       {...props}
     >
       {children}
-      <span className="Tooltip__root">{content}</span>
+      <span className="tooltip__root">{content}</span>
     </span>
   );
 };

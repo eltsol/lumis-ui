@@ -26,12 +26,12 @@ export const Checkbox = ({
   const checkboxId = id || `checkbox-${Math.random().toString(36).slice(2, 9)}`;
 
   return (
-    <div className="Checkbox Checkbox__wrapper">
-      <label className="Checkbox__label" htmlFor={checkboxId}>
+    <div className="checkbox checkbox__wrapper">
+      <label className="checkbox__label" htmlFor={checkboxId}>
         <input
           ref={inputRef}
           type="checkbox"
-          className="Checkbox__input"
+          className="checkbox__input"
           id={checkboxId}
           checked={checked}
           onChange={onChange}
@@ -39,17 +39,17 @@ export const Checkbox = ({
           {...props}
         />
         <span
-          className={`Checkbox__checkmark ${error ? "Checkbox__checkmark--error" : ""}`}
+          className={`checkbox__checkmark ${error ? "checkbox__checkmark--error" : ""}`}
         >
-          {icon || <span className="Checkbox__defaultIcon" />}
+          {icon || <span className="checkbox__defaultIcon" />}
         </span>
-        {label && <span className="Checkbox__text">{label}</span>}
+        {label && <span className="checkbox__text">{label}</span>}
       </label>
 
       {error && errorMessage ? (
-        <span className="Checkbox__errorText">{errorMessage}</span>
+        <span className="checkbox__errorText">{errorMessage}</span>
       ) : (
-        helperText && <span className="Checkbox__helperText">{helperText}</span>
+        helperText && <span className="checkbox__helperText">{helperText}</span>
       )}
     </div>
   );

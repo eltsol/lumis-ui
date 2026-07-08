@@ -1,4 +1,4 @@
-.List {
+.list {
   &__root {
     list-style: none;
     padding: 0;
@@ -8,7 +8,7 @@
     overflow: hidden;
   }
   &--dense {
-    .List__item {
+    .list__item {
       padding: var(--lm-spacing-sm) var(--lm-spacing-md);
     }
   }

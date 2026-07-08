@@ -12,7 +12,7 @@ export const Skeleton = ({
 
   return (
     <span
-      className={`Skeleton Skeleton__root Skeleton--${variant} ${className || ""}`}
+      className={`skeleton skeleton__root skeleton--${variant} ${className || ""}`}
       style={style}
       {...props}
     />

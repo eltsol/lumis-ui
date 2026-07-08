@@ -8,7 +8,7 @@ export const Icon = ({
   className,
   ...props
 }: IconProps) => {
-  const iconClassName = ["Icon Icon__root", `Icon--${size}`, className]
+  const iconClassName = ["icon icon__root", `icon--${size}`, className]
     .filter(Boolean)
     .join(" ");
 

@@ -1,4 +1,4 @@
-.Switch {
+.switch {
   &__label {
     display: inline-flex;
     align-items: center;
@@ -34,18 +34,18 @@
       var(--lm-motion-easing-emphasized);
     box-shadow: var(--lm-elevation-level1);
   }
-  &__input:checked + .Switch__track {
+  &__input:checked + .switch__track {
     background: var(--lm-color-primary);
   }
-  &__input:checked + .Switch__track .Switch__thumb {
+  &__input:checked + .switch__track .switch__thumb {
     transform: translateX(16px);
     background: var(--lm-color-on-primary);
   }
-  &__input:focus-visible + .Switch__track {
+  &__input:focus-visible + .switch__track {
     outline: 2px solid var(--lm-color-primary);
     outline-offset: 2px;
   }
-  &__input:disabled + .Switch__track {
+  &__input:disabled + .switch__track {
     opacity: 0.5;
     cursor: not-allowed;
   }

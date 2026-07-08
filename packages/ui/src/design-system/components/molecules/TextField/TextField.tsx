@@ -13,25 +13,25 @@ export const TextField = ({
 }: TextFieldProps) => {
   return (
     <div
-      className={`TextField__wrapper ${fullWidth ? "TextField--fullWidth" : ""}`}
+      className={`textfield__wrapper ${fullWidth ? "textfield--fullWidth" : ""}`}
     >
-      {label && <label className="TextField__label">{label}</label>}
+      {label && <label className="textfield__label">{label}</label>}
 
       <div
-        className={`TextField__inputContainer ${error ? "TextField__inputContainer--error" : ""}`}
+        className={`textfield__inputContainer ${error ? "textfield__inputContainer--error" : ""}`}
       >
-        {leftIcon && <span className="TextField__icon">{leftIcon}</span>}
+        {leftIcon && <span className="textfield__icon">{leftIcon}</span>}
 
-        <input className="TextField__input" {...props} />
+        <input className="textfield__input" {...props} />
 
-        {rightIcon && <span className="TextField__icon">{rightIcon}</span>}
+        {rightIcon && <span className="textfield__icon">{rightIcon}</span>}
       </div>
 
       {error && errorMessage ? (
-        <span className="TextField__errorText">{errorMessage}</span>
+        <span className="textfield__errorText">{errorMessage}</span>
       ) : (
         helperText && (
-          <span className="TextField__helperText">{helperText}</span>
+          <span className="textfield__helperText">{helperText}</span>
         )
       )}
     </div>

@@ -10,8 +10,8 @@ export const Tabs = ({
   ...props
 }: TabsProps) => {
   const tabsClassName = [
-    "Tabs Tabs__root",
-    fullWidth ? "Tabs--fullWidth" : "",
+    "tabs tabs__root",
+    fullWidth ? "tabs--fullWidth" : "",
     className,
   ]
     .filter(Boolean)
@@ -22,9 +22,9 @@ export const Tabs = ({
       {tabs.map((tab) => {
         const isActive = tab.value === value;
         const tabClassName = [
-          "Tabs__tab",
-          isActive ? "Tabs__tab--active" : "",
-          tab.disabled ? "Tabs__tab--disabled" : "",
+          "tabs__tab",
+          isActive ? "tabs__tab--active" : "",
+          tab.disabled ? "tabs__tab--disabled" : "",
         ]
           .filter(Boolean)
           .join(" ");
@@ -38,9 +38,9 @@ export const Tabs = ({
             disabled={tab.disabled}
             onClick={() => !tab.disabled && onChange(tab.value)}
           >
-            {tab.icon && <span className="Tabs__icon">{tab.icon}</span>}
-            <span className="Tabs__label">{tab.label}</span>
-            {isActive && <span className="Tabs__indicator" />}
+            {tab.icon && <span className="tabs__icon">{tab.icon}</span>}
+            <span className="tabs__label">{tab.label}</span>
+            {isActive && <span className="tabs__indicator" />}
           </button>
         );
       })}

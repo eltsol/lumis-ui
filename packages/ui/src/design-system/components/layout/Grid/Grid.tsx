@@ -9,9 +9,9 @@ export const Grid = ({
   ...props
 }: GridProps) => {
   const gridClassName = [
-    "Grid Grid__root",
-    `Grid--${gap}`,
-    typeof columns === "number" ? `Grid--cols-${columns}` : "",
+    "grid grid__root",
+    `grid--${gap}`,
+    typeof columns === "number" ? `grid--cols-${columns}` : "",
     className,
   ]
     .filter(Boolean)

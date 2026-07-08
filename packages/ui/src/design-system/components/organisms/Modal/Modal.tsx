@@ -41,18 +41,18 @@ export const Modal = ({
   if (!isOpen) return null;
 
   return (
-    <div className="Modal__overlay" onClick={handleOverlayClick}>
-      <div className={`Modal__root Modal--${size}`}>
+    <div className="modal__overlay" onClick={handleOverlayClick}>
+      <div className={`modal__root modal--${size}`}>
         {(title || description) && (
-          <div className="Modal__header">
+          <div className="modal__header">
             <div>
-              {title && <h2 className="Modal__title">{title}</h2>}
+              {title && <h2 className="modal__title">{title}</h2>}
               {description && (
-                <p className="Modal__description">{description}</p>
+                <p className="modal__description">{description}</p>
               )}
             </div>
             <button
-              className="Modal__close"
+              className="modal__close"
               onClick={onClose}
               aria-label="Close"
             >
@@ -60,7 +60,7 @@ export const Modal = ({
             </button>
           </div>
         )}
-        <div className="Modal__content">{children}</div>
+        <div className="modal__content">{children}</div>
       </div>
     </div>
   );

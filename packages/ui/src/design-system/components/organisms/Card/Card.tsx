@@ -9,10 +9,10 @@ export const Card = ({
   ...props
 }: CardProps) => {
   const className = [
-    "Card Card__root",
-    `Card--${padding}`,
-    hoverable ? "Card--hoverable" : "",
-    clickable ? "Card--clickable" : "",
+    "card card__root",
+    `card--${padding}`,
+    hoverable ? "card--hoverable" : "",
+    clickable ? "card--clickable" : "",
   ]
     .filter(Boolean)
     .join(" ");

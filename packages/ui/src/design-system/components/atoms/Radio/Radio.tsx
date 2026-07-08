@@ -15,10 +15,10 @@ export const Radio = ({
   const radioId = id || `radio-${name}-${value}`;
 
   return (
-    <label className="Radio__label" htmlFor={radioId}>
+    <label className="radio__label" htmlFor={radioId}>
       <input
         type="radio"
-        className="Radio__input"
+        className="radio__input"
         id={radioId}
         value={value}
         name={name}
@@ -27,10 +27,10 @@ export const Radio = ({
         disabled={disabled}
         {...props}
       />
-      <span className="Radio__radiomark">
-        {icon || <span className="Radio__defaultIcon" />}
+      <span className="radio__radiomark">
+        {icon || <span className="radio__defaultIcon" />}
       </span>
-      {label && <span className="Radio__text">{label}</span>}
+      {label && <span className="radio__text">{label}</span>}
     </label>
   );
 };

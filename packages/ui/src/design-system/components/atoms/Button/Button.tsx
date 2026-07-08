@@ -15,10 +15,10 @@ export const Button = ({
   const isDisabled = disabled || loading;
 
   const className = [
-    "Button Button__root",
-    `Button--${variant}`,
-    `Button--${size}`,
-    fullWidth ? "Button--fullWidth" : "",
+    "button button__root",
+    `button--${variant}`,
+    `button--${size}`,
+    fullWidth ? "button--fullwidth" : "",
   ]
     .filter(Boolean)
     .join(" ");
@@ -26,12 +26,12 @@ export const Button = ({
   return (
     <button className={className} disabled={isDisabled} {...props}>
       {loading ? (
-        <span className="Button__loader">Loading...</span>
+        <span className="button__loader">Loading...</span>
       ) : (
         <>
-          {leftIcon && <span className="Button__icon">{leftIcon}</span>}
-          <span className="Button__label">{children}</span>
-          {rightIcon && <span className="Button__icon">{rightIcon}</span>}
+          {leftIcon && <span className="button__icon">{leftIcon}</span>}
+          <span className="button__label">{children}</span>
+          {rightIcon && <span className="button__icon">{rightIcon}</span>}
         </>
       )}
     </button>
