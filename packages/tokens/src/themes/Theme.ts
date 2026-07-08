@@ -12,7 +12,9 @@ export interface ThemeColors {
   onSurface: string;
   outline: string;
   success: string;
+  onSuccess: string;
   warning: string;
+  onWarning: string;
   error: string;
   onError: string;
   background: string;
