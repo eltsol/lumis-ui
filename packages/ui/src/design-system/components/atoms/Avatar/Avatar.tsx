@@ -10,18 +10,8 @@ export const Avatar = ({
   className,
   ...props
 }: AvatarProps) => {
-  const initials = name
-    ? name
-        .split(" ")
-        .map((n) => n[0])
-        .join("")
-        .toUpperCase()
-        .slice(0, 2)
-    : "";
-
-  const avatarClassName = ["avatar avatar__root", `avatar--${size}`, className]
-    .filter(Boolean)
-    .join(" ");
+  const initials = name ? name.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2) : "";
+  const avatarClassName = ["avatar avatar__root", `avatar--${size}`, className].filter(Boolean).join(" ");
 
   if (src) {
     return (
