@@ -11,6 +11,7 @@ export type BadgeSizes = "sm" | "md";
 export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   variant?: BadgeVariants;
   size?: BadgeSizes;
-  children: ReactNode;
+  children?: ReactNode;
   dot?: boolean;
+  dotOnly?: boolean;
 }
