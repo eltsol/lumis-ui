@@ -19,8 +19,8 @@
     border-color: var(--lm-color-primary);
   }
   &--success {
+    color: var(--lm-color-on-success);
     background: var(--lm-color-success);
-    color: var(--lm-color-on-surface);
     border-color: var(--lm-color-success);
   }
   &--warning {

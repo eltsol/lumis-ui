@@ -17,11 +17,11 @@
   }
   &--success {
     background: var(--lm-color-success);
-    color: var(--lm-color-on-surface);
+    color: var(--lm-color-on-success);
   }
   &--warning {
     background: var(--lm-color-warning);
-    color: var(--lm-color-on-surface);
+    color: var(--lm-color-on-warning);
   }
   &--error {
     background: var(--lm-color-error);
