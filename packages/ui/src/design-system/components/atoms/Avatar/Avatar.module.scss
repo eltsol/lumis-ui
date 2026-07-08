@@ -1,0 +1,50 @@
+.Avatar {
+  &__root {
+    flex-shrink: 0;
+    font-weight: 500;
+    overflow: hidden;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    color: var(--lm-color-on-primary);
+    border-radius: var(--lm-shape-full);
+    background: var(--lm-color-primary);
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* SIZES */
+  &--xs {
+    width: 20px;
+    height: 20px;
+    font-size: 8px;
+  }
+
+  &--sm {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+  }
+
+  &--md {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+
+  &--lg {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  &--xl {
+    width: 64px;
+    height: 64px;
+    font-size: 20px;
+  }
+}

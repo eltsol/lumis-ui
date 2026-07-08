@@ -1,4 +1,4 @@
-import styles from "./Grid.module.css";
+import "./Grid.scss";
 import { GridProps } from "./Grid.types";
 
 export const Grid = ({
@@ -9,9 +9,9 @@ export const Grid = ({
   ...props
 }: GridProps) => {
   const gridClassName = [
-    styles.grid,
-    styles[gap],
-    typeof columns === "number" ? styles[`cols-${columns}`] : "",
+    "Grid Grid__root",
+    `Grid--${gap}`,
+    typeof columns === "number" ? `Grid--cols-${columns}` : "",
     className,
   ]
     .filter(Boolean)

@@ -1,4 +1,4 @@
-import styles from "./Spinner.module.css";
+import "./Spinner.scss";
 import { SpinnerProps } from "./Spinner.types";
 
 export const Spinner = ({
@@ -7,7 +7,7 @@ export const Spinner = ({
   className,
   ...props
 }: SpinnerProps) => {
-  const spinnerClassName = [styles.wrapper, className]
+  const spinnerClassName = ["Spinner Spinner__wrapper", className]
     .filter(Boolean)
     .join(" ");
 
@@ -18,8 +18,8 @@ export const Spinner = ({
       aria-label={label || "Loading"}
       {...props}
     >
-      <span className={`${styles.spinner} ${styles[size]}`} />
-      {label && <span className={styles.label}>{label}</span>}
+      <span className={`Spinner__root Spinner--${size}`} />
+      {label && <span className="Spinner__label">{label}</span>}
     </div>
   );
 };

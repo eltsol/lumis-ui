@@ -1,0 +1,70 @@
+.Snackbar {
+  &__root {
+    position: fixed;
+    bottom: var(--lm-spacing-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: var(--lm-spacing-md);
+    padding: var(--lm-spacing-sm) var(--lm-spacing-lg);
+    background: var(--lm-color-on-surface);
+    color: var(--lm-color-surface);
+    border-radius: var(--lm-shape-lg);
+    box-shadow: var(--lm-elevation-level3);
+    z-index: 1100;
+    animation: slideUp var(--lm-motion-duration-medium)
+      var(--lm-motion-easing-emphasized);
+    max-width: 90vw;
+  }
+
+  &__message {
+    font-size: var(--lm-typography-body1-font-size);
+    flex: 1;
+  }
+
+  &__action {
+    background: none;
+    border: none;
+    color: var(--lm-color-primary);
+    font-weight: 600;
+    font-size: var(--lm-typography-body1-font-size);
+    cursor: pointer;
+    padding: var(--lm-spacing-xs) var(--lm-spacing-sm);
+    border-radius: var(--lm-shape-xs);
+    white-space: nowrap;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: transparent;
+    color: var(--lm-color-surface);
+    border-radius: var(--lm-shape-full);
+    cursor: pointer;
+    font-size: 14px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(var(--lm-spacing-lg));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

@@ -1,4 +1,4 @@
-import styles from "./TextField.module.css";
+import "./TextField.scss";
 import { TextFieldProps } from "./TextField.types";
 
 export const TextField = ({
@@ -12,21 +12,27 @@ export const TextField = ({
   ...props
 }: TextFieldProps) => {
   return (
-    <div className={`${styles.wrapper} ${fullWidth ? styles.fullWidth : ""}`}>
-      {label && <label className={styles.label}>{label}</label>}
+    <div
+      className={`TextField__wrapper ${fullWidth ? "TextField--fullWidth" : ""}`}
+    >
+      {label && <label className="TextField__label">{label}</label>}
 
-      <div className={`${styles.inputContainer} ${error ? styles.error : ""}`}>
-        {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
+      <div
+        className={`TextField__inputContainer ${error ? "TextField__inputContainer--error" : ""}`}
+      >
+        {leftIcon && <span className="TextField__icon">{leftIcon}</span>}
 
-        <input className={styles.input} {...props} />
+        <input className="TextField__input" {...props} />
 
-        {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
+        {rightIcon && <span className="TextField__icon">{rightIcon}</span>}
       </div>
 
       {error && errorMessage ? (
-        <span className={styles.errorText}>{errorMessage}</span>
+        <span className="TextField__errorText">{errorMessage}</span>
       ) : (
-        helperText && <span className={styles.helperText}>{helperText}</span>
+        helperText && (
+          <span className="TextField__helperText">{helperText}</span>
+        )
       )}
     </div>
   );

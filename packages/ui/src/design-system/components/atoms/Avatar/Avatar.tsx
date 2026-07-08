@@ -1,4 +1,4 @@
-import styles from "./Avatar.module.css";
+import "./Avatar.scss";
 import { AvatarProps } from "./Avatar.types";
 
 export const Avatar = ({
@@ -19,14 +19,14 @@ export const Avatar = ({
         .slice(0, 2)
     : "";
 
-  const avatarClassName = [styles.avatar, styles[size], className]
+  const avatarClassName = ["Avatar Avatar__root", `Avatar--${size}`, className]
     .filter(Boolean)
     .join(" ");
 
   if (src) {
     return (
       <span className={avatarClassName} {...props}>
-        <img className={styles.image} src={src} alt={alt} />
+        <img className="Avatar__image" src={src} alt={alt} />
       </span>
     );
   }

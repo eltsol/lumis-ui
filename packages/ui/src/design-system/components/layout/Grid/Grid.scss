@@ -1,0 +1,41 @@
+.Grid {
+  &__root {
+    display: grid;
+  }
+  &--none {
+    gap: 0;
+  }
+  &--xs {
+    gap: var(--lm-spacing-xs);
+  }
+  &--sm {
+    gap: var(--lm-spacing-sm);
+  }
+  &--md {
+    gap: var(--lm-spacing-md);
+  }
+  &--lg {
+    gap: var(--lm-spacing-lg);
+  }
+  &--xl {
+    gap: var(--lm-spacing-xl);
+  }
+  &--cols-1 {
+    grid-template-columns: 1fr;
+  }
+  &--cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &--cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &--cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &--cols-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  &--cols-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

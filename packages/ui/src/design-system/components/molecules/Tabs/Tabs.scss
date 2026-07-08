@@ -1,0 +1,60 @@
+.Tabs {
+  &__root {
+    display: inline-flex;
+    border-bottom: 1px solid var(--lm-color-outline);
+    position: relative;
+  }
+  &--fullWidth {
+    width: 100%;
+    .Tabs__tab {
+      flex: 1;
+    }
+  }
+  &__tab {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--lm-spacing-xs);
+    padding: var(--lm-spacing-sm) var(--lm-spacing-md);
+    border: none;
+    background: transparent;
+    color: var(--lm-color-on-surface);
+    font-size: var(--lm-typography-body1-font-size);
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: color var(--lm-motion-duration-short);
+    &:hover {
+      color: var(--lm-color-primary);
+    }
+  }
+  &__tab--active {
+    color: var(--lm-color-primary);
+  }
+  &__tab--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  &__indicator {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--lm-color-primary);
+    animation: slideIn var(--lm-motion-duration-short)
+      var(--lm-motion-easing-standard);
+  }
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

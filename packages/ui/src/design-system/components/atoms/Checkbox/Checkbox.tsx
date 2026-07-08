@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import styles from "./Checkbox.module.css";
+import "./Checkbox.scss";
 import { CheckboxProps } from "./Checkbox.types";
 
 export const Checkbox = ({
@@ -26,28 +26,30 @@ export const Checkbox = ({
   const checkboxId = id || `checkbox-${Math.random().toString(36).slice(2, 9)}`;
 
   return (
-    <div className={styles.wrapper}>
-      <label className={styles.label} htmlFor={checkboxId}>
+    <div className="Checkbox Checkbox__wrapper">
+      <label className="Checkbox__label" htmlFor={checkboxId}>
         <input
           ref={inputRef}
           type="checkbox"
-          className={styles.input}
+          className="Checkbox__input"
           id={checkboxId}
           checked={checked}
           onChange={onChange}
           disabled={disabled}
           {...props}
         />
-        <span className={`${styles.checkmark} ${error ? styles.error : ""}`}>
-          {icon || <span className={styles.defaultIcon} />}
+        <span
+          className={`Checkbox__checkmark ${error ? "Checkbox__checkmark--error" : ""}`}
+        >
+          {icon || <span className="Checkbox__defaultIcon" />}
         </span>
-        {label && <span className={styles.text}>{label}</span>}
+        {label && <span className="Checkbox__text">{label}</span>}
       </label>
 
       {error && errorMessage ? (
-        <span className={styles.errorText}>{errorMessage}</span>
+        <span className="Checkbox__errorText">{errorMessage}</span>
       ) : (
-        helperText && <span className={styles.helperText}>{helperText}</span>
+        helperText && <span className="Checkbox__helperText">{helperText}</span>
       )}
     </div>
   );

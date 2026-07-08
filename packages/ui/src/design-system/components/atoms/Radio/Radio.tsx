@@ -1,4 +1,4 @@
-import styles from "./Radio.module.css";
+import "./Radio.scss";
 import { RadioProps } from "./Radio.types";
 
 export const Radio = ({
@@ -15,10 +15,10 @@ export const Radio = ({
   const radioId = id || `radio-${name}-${value}`;
 
   return (
-    <label className={styles.label} htmlFor={radioId}>
+    <label className="Radio__label" htmlFor={radioId}>
       <input
         type="radio"
-        className={styles.input}
+        className="Radio__input"
         id={radioId}
         value={value}
         name={name}
@@ -27,10 +27,10 @@ export const Radio = ({
         disabled={disabled}
         {...props}
       />
-      <span className={styles.radiomark}>
-        {icon || <span className={styles.defaultIcon} />}
+      <span className="Radio__radiomark">
+        {icon || <span className="Radio__defaultIcon" />}
       </span>
-      {label && <span className={styles.text}>{label}</span>}
+      {label && <span className="Radio__text">{label}</span>}
     </label>
   );
 };

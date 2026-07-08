@@ -1,0 +1,59 @@
+.Badge {
+  &__root {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--lm-spacing-xs);
+    border-radius: var(--lm-shape-full);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  /* VARIANTS */
+  &--primary {
+    background: var(--lm-color-primary);
+    color: var(--lm-color-on-primary);
+  }
+
+  &--secondary {
+    background: var(--lm-color-surface-variant);
+    color: var(--lm-color-on-surface);
+  }
+
+  &--success {
+    background: var(--lm-color-success);
+    color: var(--lm-color-on-surface);
+  }
+
+  &--warning {
+    background: var(--lm-color-warning);
+    color: var(--lm-color-on-surface);
+  }
+
+  &--error {
+    background: var(--lm-color-error);
+    color: var(--lm-color-on-error);
+  }
+
+  /* SIZES */
+  &--sm {
+    padding: 2px var(--lm-spacing-xs);
+    font-size: var(--lm-typography-caption-font-size);
+  }
+
+  &--md {
+    padding: var(--lm-spacing-xs) var(--lm-spacing-sm);
+    font-size: var(--lm-typography-body2-font-size);
+  }
+
+  /* DOT */
+  &--dot {
+    &::before {
+      content: "";
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from "react";
-import styles from "./Modal.module.css";
+import "./Modal.scss";
 import { ModalProps } from "./Modal.types";
 
 export const Modal = ({
@@ -41,18 +41,18 @@ export const Modal = ({
   if (!isOpen) return null;
 
   return (
-    <div className={styles.overlay} onClick={handleOverlayClick}>
-      <div className={`${styles.modal} ${styles[size]}`}>
+    <div className="Modal__overlay" onClick={handleOverlayClick}>
+      <div className={`Modal__root Modal--${size}`}>
         {(title || description) && (
-          <div className={styles.header}>
+          <div className="Modal__header">
             <div>
-              {title && <h2 className={styles.title}>{title}</h2>}
+              {title && <h2 className="Modal__title">{title}</h2>}
               {description && (
-                <p className={styles.description}>{description}</p>
+                <p className="Modal__description">{description}</p>
               )}
             </div>
             <button
-              className={styles.close}
+              className="Modal__close"
               onClick={onClose}
               aria-label="Close"
             >
@@ -60,7 +60,7 @@ export const Modal = ({
             </button>
           </div>
         )}
-        <div className={styles.content}>{children}</div>
+        <div className="Modal__content">{children}</div>
       </div>
     </div>
   );

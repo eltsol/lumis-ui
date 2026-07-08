@@ -1,4 +1,4 @@
-import styles from "./List.module.css";
+import "./List.scss";
 import { ListProps } from "./List.types";
 
 export const List = ({
@@ -8,7 +8,11 @@ export const List = ({
   className,
   ...props
 }: ListProps) => {
-  const listClassName = [styles.list, dense ? styles.dense : "", className]
+  const listClassName = [
+    "List List__root",
+    dense ? "List--dense" : "",
+    className,
+  ]
     .filter(Boolean)
     .join(" ");
 
@@ -17,22 +21,22 @@ export const List = ({
       {items.map((item, index) => (
         <li
           key={index}
-          className={`${styles.item} ${item.selected ? styles.selected : ""} ${item.disabled ? styles.disabled : ""}`}
+          className={`List__item ${item.selected ? "List__item--selected" : ""} ${item.disabled ? "List__item--disabled" : ""}`}
           onClick={() =>
             !item.disabled && (item.onClick || onItemClick)?.(index)
           }
         >
           {item.leading && (
-            <span className={styles.leading}>{item.leading}</span>
+            <span className="List__leading">{item.leading}</span>
           )}
-          <div className={styles.content}>
-            <span className={styles.label}>{item.label}</span>
+          <div className="List__content">
+            <span className="List__label">{item.label}</span>
             {item.secondary && (
-              <span className={styles.secondary}>{item.secondary}</span>
+              <span className="List__secondary">{item.secondary}</span>
             )}
           </div>
           {item.trailing && (
-            <span className={styles.trailing}>{item.trailing}</span>
+            <span className="List__trailing">{item.trailing}</span>
           )}
         </li>
       ))}

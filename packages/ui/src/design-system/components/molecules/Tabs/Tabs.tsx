@@ -1,4 +1,4 @@
-import styles from "./Tabs.module.css";
+import "./Tabs.scss";
 import { TabsProps } from "./Tabs.types";
 
 export const Tabs = ({
@@ -10,8 +10,8 @@ export const Tabs = ({
   ...props
 }: TabsProps) => {
   const tabsClassName = [
-    styles.tabs,
-    fullWidth ? styles.fullWidth : "",
+    "Tabs Tabs__root",
+    fullWidth ? "Tabs--fullWidth" : "",
     className,
   ]
     .filter(Boolean)
@@ -22,9 +22,9 @@ export const Tabs = ({
       {tabs.map((tab) => {
         const isActive = tab.value === value;
         const tabClassName = [
-          styles.tab,
-          isActive ? styles.active : "",
-          tab.disabled ? styles.disabled : "",
+          "Tabs__tab",
+          isActive ? "Tabs__tab--active" : "",
+          tab.disabled ? "Tabs__tab--disabled" : "",
         ]
           .filter(Boolean)
           .join(" ");
@@ -38,9 +38,9 @@ export const Tabs = ({
             disabled={tab.disabled}
             onClick={() => !tab.disabled && onChange(tab.value)}
           >
-            {tab.icon && <span className={styles.icon}>{tab.icon}</span>}
-            <span className={styles.label}>{tab.label}</span>
-            {isActive && <span className={styles.indicator} />}
+            {tab.icon && <span className="Tabs__icon">{tab.icon}</span>}
+            <span className="Tabs__label">{tab.label}</span>
+            {isActive && <span className="Tabs__indicator" />}
           </button>
         );
       })}

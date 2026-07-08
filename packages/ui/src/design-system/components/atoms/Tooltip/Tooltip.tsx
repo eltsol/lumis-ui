@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./Tooltip.module.css";
+import "./Tooltip.scss";
 import { TooltipProps } from "./Tooltip.types";
 
 export const Tooltip = ({
@@ -15,9 +15,9 @@ export const Tooltip = ({
   const isVisible = isControlled ? visibleProp : visible;
 
   const tooltipClassName = [
-    styles.wrapper,
-    styles[placement],
-    isVisible ? styles.visible : "",
+    "Tooltip Tooltip__wrapper",
+    `Tooltip--${placement}`,
+    isVisible ? "Tooltip--visible" : "",
     className,
   ]
     .filter(Boolean)
@@ -31,7 +31,7 @@ export const Tooltip = ({
       {...props}
     >
       {children}
-      <span className={styles.tooltip}>{content}</span>
+      <span className="Tooltip__root">{content}</span>
     </span>
   );
 };

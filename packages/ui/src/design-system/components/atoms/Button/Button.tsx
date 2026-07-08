@@ -1,4 +1,4 @@
-import styles from "./Button.module.css";
+import "./Button.scss";
 import { ButtonProps } from "./Button.types";
 
 export const Button = ({
@@ -15,10 +15,10 @@ export const Button = ({
   const isDisabled = disabled || loading;
 
   const className = [
-    styles.button,
-    styles[variant],
-    styles[size],
-    fullWidth ? styles.fullWidth : "",
+    "Button Button__root",
+    `Button--${variant}`,
+    `Button--${size}`,
+    fullWidth ? "Button--fullWidth" : "",
   ]
     .filter(Boolean)
     .join(" ");
@@ -26,12 +26,12 @@ export const Button = ({
   return (
     <button className={className} disabled={isDisabled} {...props}>
       {loading ? (
-        <span className={styles.loader}>Loading...</span>
+        <span className="Button__loader">Loading...</span>
       ) : (
         <>
-          {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
-          <span className={styles.label}>{children}</span>
-          {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
+          {leftIcon && <span className="Button__icon">{leftIcon}</span>}
+          <span className="Button__label">{children}</span>
+          {rightIcon && <span className="Button__icon">{rightIcon}</span>}
         </>
       )}
     </button>

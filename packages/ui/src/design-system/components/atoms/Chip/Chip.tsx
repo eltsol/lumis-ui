@@ -1,4 +1,4 @@
-import styles from "./Chip.module.css";
+import "./Chip.scss";
 import { ChipProps } from "./Chip.types";
 
 export const Chip = ({
@@ -14,11 +14,11 @@ export const Chip = ({
   ...props
 }: ChipProps) => {
   const chipClassName = [
-    styles.chip,
-    styles[variant],
-    styles[size],
-    selectable ? styles.selectable : "",
-    selected ? styles.selected : "",
+    "Chip Chip__root",
+    `Chip--${variant}`,
+    `Chip--${size}`,
+    selectable ? "Chip--selectable" : "",
+    selected ? "Chip--selected" : "",
     className,
   ]
     .filter(Boolean)
@@ -26,14 +26,10 @@ export const Chip = ({
 
   return (
     <span className={chipClassName} onClick={onClick} {...props}>
-      {icon && <span className={styles.icon}>{icon}</span>}
-      <span className={styles.label}>{label}</span>
+      {icon && <span className="Chip__icon">{icon}</span>}
+      <span className="Chip__label">{label}</span>
       {onDelete && (
-        <button
-          className={styles.delete}
-          onClick={onDelete}
-          aria-label="Delete"
-        >
+        <button className="Chip__delete" onClick={onDelete} aria-label="Delete">
           ✕
         </button>
       )}

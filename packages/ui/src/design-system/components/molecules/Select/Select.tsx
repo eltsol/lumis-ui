@@ -1,4 +1,4 @@
-import styles from "./Select.module.css";
+import "./Select.scss";
 import { SelectProps } from "./Select.types";
 
 export const Select = ({
@@ -13,11 +13,13 @@ export const Select = ({
   ...props
 }: SelectProps) => {
   return (
-    <div className={`${styles.wrapper} ${fullWidth ? styles.fullWidth : ""}`}>
-      {label && <label className={styles.label}>{label}</label>}
+    <div className={`Select__wrapper ${fullWidth ? "Select--fullWidth" : ""}`}>
+      {label && <label className="Select__label">{label}</label>}
 
-      <div className={`${styles.selectContainer} ${error ? styles.error : ""}`}>
-        <select className={styles.select} {...props}>
+      <div
+        className={`Select__selectContainer ${error ? "Select__selectContainer--error" : ""}`}
+      >
+        <select className="Select__select" {...props}>
           {placeholder && (
             <option value="" disabled>
               {placeholder}
@@ -34,13 +36,13 @@ export const Select = ({
           ))}
           {children}
         </select>
-        <span className={styles.arrow} />
+        <span className="Select__arrow" />
       </div>
 
       {error && errorMessage ? (
-        <span className={styles.errorText}>{errorMessage}</span>
+        <span className="Select__errorText">{errorMessage}</span>
       ) : (
-        helperText && <span className={styles.helperText}>{helperText}</span>
+        helperText && <span className="Select__helperText">{helperText}</span>
       )}
     </div>
   );

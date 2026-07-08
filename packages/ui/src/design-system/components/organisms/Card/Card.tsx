@@ -1,4 +1,4 @@
-import styles from "./Card.module.css";
+import "./Card.scss";
 import { CardProps } from "./Card.types";
 
 export const Card = ({
@@ -9,10 +9,10 @@ export const Card = ({
   ...props
 }: CardProps) => {
   const className = [
-    styles.card,
-    styles[padding],
-    hoverable ? styles.hoverable : "",
-    clickable ? styles.clickable : "",
+    "Card Card__root",
+    `Card--${padding}`,
+    hoverable ? "Card--hoverable" : "",
+    clickable ? "Card--clickable" : "",
   ]
     .filter(Boolean)
     .join(" ");

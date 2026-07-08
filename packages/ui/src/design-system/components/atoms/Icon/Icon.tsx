@@ -1,4 +1,4 @@
-import styles from "./Icon.module.css";
+import "./Icon.scss";
 import { IconProps } from "./Icon.types";
 
 export const Icon = ({
@@ -8,7 +8,7 @@ export const Icon = ({
   className,
   ...props
 }: IconProps) => {
-  const iconClassName = [styles.icon, styles[size], className]
+  const iconClassName = ["Icon Icon__root", `Icon--${size}`, className]
     .filter(Boolean)
     .join(" ");
 

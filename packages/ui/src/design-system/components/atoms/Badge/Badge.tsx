@@ -1,4 +1,4 @@
-import styles from "./Badge.module.css";
+import "./Badge.scss";
 import { BadgeProps } from "./Badge.types";
 
 export const Badge = ({
@@ -10,10 +10,10 @@ export const Badge = ({
   ...props
 }: BadgeProps) => {
   const badgeClassName = [
-    styles.badge,
-    styles[variant],
-    styles[size],
-    dot ? styles.dot : "",
+    "Badge Badge__root",
+    `Badge--${variant}`,
+    `Badge--${size}`,
+    dot ? "Badge--dot" : "",
     className,
   ]
     .filter(Boolean)

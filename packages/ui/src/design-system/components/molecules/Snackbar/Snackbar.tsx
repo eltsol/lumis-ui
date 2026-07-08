@@ -1,5 +1,5 @@
-import { useEffect, useRef, ReactNode } from "react";
-import styles from "./Snackbar.module.css";
+import { useEffect, useRef } from "react";
+import "./Snackbar.scss";
 import { SnackbarProps } from "./Snackbar.types";
 
 export const Snackbar = ({
@@ -29,15 +29,19 @@ export const Snackbar = ({
   if (!isOpen) return null;
 
   return (
-    <div className={styles.snackbar}>
-      <span className={styles.message}>{message}</span>
+    <div className="Snackbar Snackbar__root">
+      <span className="Snackbar__message">{message}</span>
       {actionLabel && (
-        <button className={styles.action} onClick={onAction}>
+        <button className="Snackbar__action" onClick={onAction}>
           {actionLabel}
         </button>
       )}
       {onClose && !actionLabel && (
-        <button className={styles.close} onClick={onClose} aria-label="Close">
+        <button
+          className="Snackbar__close"
+          onClick={onClose}
+          aria-label="Close"
+        >
           ✕
         </button>
       )}

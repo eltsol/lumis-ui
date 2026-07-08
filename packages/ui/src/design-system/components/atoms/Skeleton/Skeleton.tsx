@@ -1,4 +1,4 @@
-import styles from "./Skeleton.module.css";
+import "./Skeleton.scss";
 import { SkeletonProps } from "./Skeleton.types";
 
 export const Skeleton = ({
@@ -12,7 +12,7 @@ export const Skeleton = ({
 
   return (
     <span
-      className={`${styles.skeleton} ${styles[variant]} ${className || ""}`}
+      className={`Skeleton Skeleton__root Skeleton--${variant} ${className || ""}`}
       style={style}
       {...props}
     />

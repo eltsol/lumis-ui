@@ -1,4 +1,4 @@
-import styles from "./Container.module.css";
+import "./Container.scss";
 import { ContainerProps } from "./Container.types";
 
 export const Container = ({
@@ -10,10 +10,10 @@ export const Container = ({
   ...props
 }: ContainerProps) => {
   const containerClassName = [
-    styles.container,
-    styles[maxWidth],
-    styles[padding],
-    centered ? styles.centered : "",
+    "Container Container__root",
+    `Container--${maxWidth}`,
+    `Container--${padding}`,
+    centered ? "Container--centered" : "",
     className,
   ]
     .filter(Boolean)
