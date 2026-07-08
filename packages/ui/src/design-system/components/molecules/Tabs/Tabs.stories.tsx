@@ -12,46 +12,54 @@ const tabs = [
   { label: "Settings", value: "settings" },
 ];
 
+function UseTabsDefault() {
+  const [value, setValue] = useState("overview");
+  return <Tabs tabs={tabs} value={value} onChange={setValue} />;
+}
+
 export const Default = {
-  render: () => {
-    const [value, setValue] = useState("overview");
-    return <Tabs tabs={tabs} value={value} onChange={setValue} />;
-  },
+  render: () => <UseTabsDefault />,
 };
+
+function UseTabsWithIcons() {
+  const [value, setValue] = useState("overview");
+  return (
+    <Tabs
+      tabs={tabs.map((tab) => ({ ...tab, icon: "📄" }))}
+      value={value}
+      onChange={setValue}
+    />
+  );
+}
 
 export const WithIcons = {
-  render: () => {
-    const [value, setValue] = useState("overview");
-    return (
-      <Tabs
-        tabs={tabs.map((tab) => ({ ...tab, icon: "📄" }))}
-        value={value}
-        onChange={setValue}
-      />
-    );
-  },
+  render: () => <UseTabsWithIcons />,
 };
+
+function UseTabsFullWidth() {
+  const [value, setValue] = useState("overview");
+  return (
+    <div style={{ width: 400 }}>
+      <Tabs tabs={tabs} value={value} onChange={setValue} fullWidth />
+    </div>
+  );
+}
 
 export const FullWidth = {
-  render: () => {
-    const [value, setValue] = useState("overview");
-    return (
-      <div style={{ width: 400 }}>
-        <Tabs tabs={tabs} value={value} onChange={setValue} fullWidth />
-      </div>
-    );
-  },
+  render: () => <UseTabsFullWidth />,
 };
 
+function UseTabsWithDisabled() {
+  const [value, setValue] = useState("overview");
+  return (
+    <Tabs
+      tabs={tabs.map((tab, i) => ({ ...tab, disabled: i === 2 }))}
+      value={value}
+      onChange={setValue}
+    />
+  );
+}
+
 export const WithDisabled = {
-  render: () => {
-    const [value, setValue] = useState("overview");
-    return (
-      <Tabs
-        tabs={tabs.map((tab, i) => ({ ...tab, disabled: i === 2 }))}
-        value={value}
-        onChange={setValue}
-      />
-    );
-  },
+  render: () => <UseTabsWithDisabled />,
 };

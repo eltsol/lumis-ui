@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes } from "react";
 
 export interface SkeletonProps extends HTMLAttributes<HTMLSpanElement> {
   variant?: "text" | "circular" | "rectangular";

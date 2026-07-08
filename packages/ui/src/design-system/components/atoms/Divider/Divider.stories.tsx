@@ -1,3 +1,4 @@
+import React from "react";
 import { Divider } from "./Divider";
 
 export default {
@@ -19,7 +20,7 @@ export const Vertical = {
     layout: "centered",
   },
   decorators: [
-    (Story) => (
+    (Story: React.FC) => (
       <div style={{ height: 100, display: "flex", alignItems: "center" }}>
         <div
           style={{ width: 40, background: "var(--lm-color-surface-variant)" }}
