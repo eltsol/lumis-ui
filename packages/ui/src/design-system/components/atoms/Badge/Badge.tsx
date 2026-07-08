@@ -5,6 +5,7 @@ export const Badge = ({
   variant = "primary",
   size = "md",
   dot = false,
+  dotOnly = false,
   children,
   className,
   ...props
@@ -14,6 +15,7 @@ export const Badge = ({
     `badge--${variant}`,
     `badge--${size}`,
     dot ? "badge--dot" : "",
+    dotOnly ? "badge--dot-only" : "",
     className,
   ]
     .filter(Boolean)
