@@ -5,7 +5,7 @@ export interface ModalProps {
   onClose: () => void;
   title?: string;
   description?: string;
-  children: ReactNode;
+  children?: ReactNode;
   size?: "sm" | "md" | "lg" | "xl";
   closeOnOverlayClick?: boolean;
 }
