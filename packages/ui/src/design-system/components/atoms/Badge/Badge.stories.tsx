@@ -33,7 +33,21 @@ export const Error = {
   },
 };
 
-export const DotOnly = {
+export const ShortNumber = {
+  args: {
+    children: "3",
+    variant: "error",
+  },
+};
+
+export const LongNumber = {
+  args: {
+    children: "99+",
+    variant: "error",
+  },
+};
+
+export const Dot = {
   args: {
     dotOnly: true,
   },
