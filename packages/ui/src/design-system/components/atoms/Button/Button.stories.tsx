@@ -22,8 +22,8 @@ export const Loading = {
 export const WithIcons = {
   args: {
     children: "Button",
-    leftIcon: "🔥",
-    rightIcon: "→",
+    leadingIcon: "🔥",
+    trailingIcon: "→",
   },
 };
 
@@ -32,16 +32,6 @@ export const FullWidth = {
     children: "Button",
     fullWidth: true,
   },
-};
-
-export const Sizes = {
-  render: () => (
-    <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-      <Button size="sm">Small</Button>
-      <Button size="md">Medium</Button>
-      <Button size="lg">Large</Button>
-    </div>
-  ),
 };
 
 export const Small = {
