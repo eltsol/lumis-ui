@@ -46,6 +46,10 @@
     opacity: 0.5;
     cursor: not-allowed;
   }
+  &__label:has(&__input:disabled) {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
   &__checkmark--error {
     border-color: var(--lm-color-error);
   }
