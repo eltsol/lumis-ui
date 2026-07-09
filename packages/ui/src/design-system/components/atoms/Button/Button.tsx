@@ -5,8 +5,8 @@ export const Button = ({
   variant = "primary",
   size = "md",
   loading = false,
-  leftIcon,
-  rightIcon,
+  leadingIcon,
+  trailingIcon,
   fullWidth = false,
   disabled,
   children,
@@ -29,9 +29,9 @@ export const Button = ({
         <span className="button__loader">Loading...</span>
       ) : (
         <>
-          {leftIcon && <span className="button__icon">{leftIcon}</span>}
+          {leadingIcon && <span className="button__icon">{leadingIcon}</span>}
           <span className="button__label">{children}</span>
-          {rightIcon && <span className="button__icon">{rightIcon}</span>}
+          {trailingIcon && <span className="button__icon">{trailingIcon}</span>}
         </>
       )}
     </button>

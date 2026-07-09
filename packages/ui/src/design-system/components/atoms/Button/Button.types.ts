@@ -6,7 +6,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
     variant?: ButtonVariants;
     size?: ButtonSizes;
     loading?: boolean;
-    leftIcon?: ReactNode;
-    rightIcon?: ReactNode;
+    leadingIcon?: ReactNode;
+    trailingIcon?: ReactNode;
     fullWidth?: boolean;
 }
