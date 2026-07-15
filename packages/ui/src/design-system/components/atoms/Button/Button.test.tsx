@@ -39,7 +39,7 @@ describe("Button", () => {
 
   it("renders left and right icons", () => {
     render(
-      <Button leftIcon="←" rightIcon="→">
+      <Button leadingIcon="←" trailingIcon="→">
         Test
       </Button>,
     );
