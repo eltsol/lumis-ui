@@ -11,6 +11,7 @@ export * from "./atoms/Switch";
 export * from "./atoms/Tooltip";
 export * from "./atoms/Skeleton";
 export * from "./atoms/Spinner";
+export * from "./atoms/ThemeToggle";
 export * from "./molecules/TextField";
 export * from "./molecules/Select";
 export * from "./molecules/Snackbar";
