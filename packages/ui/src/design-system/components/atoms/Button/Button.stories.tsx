@@ -54,3 +54,10 @@ export const Large = {
     size: "lg",
   },
 };
+
+export const Disabled = {
+  args: {
+    children: "Button",
+    disabled: true,
+  },
+};
