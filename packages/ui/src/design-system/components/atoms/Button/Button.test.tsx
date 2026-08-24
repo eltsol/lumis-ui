@@ -101,4 +101,12 @@ describe("Button", () => {
     render(<Button className="custom-class">Test</Button>);
     expect(screen.getByRole("button")).toHaveClass("custom-class");
   });
+
+  it("renders as a link when href is provided", () => {
+    render(<Button href="#content">Explore</Button>);
+    expect(screen.getByRole("link", { name: "Explore" })).toHaveAttribute(
+      "href",
+      "#content",
+    );
+  });
 });

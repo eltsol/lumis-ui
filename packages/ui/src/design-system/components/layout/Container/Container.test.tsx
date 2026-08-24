@@ -11,8 +11,8 @@ describe("Container", () => {
   it("applies default classes", () => {
     render(<Container>Content</Container>);
     expect(document.querySelector(".container__root")).toHaveClass(
-      "container--xl",
-      "container--md",
+      "container--max-xl",
+      "container--padding-md",
       "container--centered",
     );
   });
@@ -20,24 +20,24 @@ describe("Container", () => {
   it("applies maxWidth classes", () => {
     const { rerender } = render(<Container maxWidth="sm">Content</Container>);
     expect(document.querySelector(".container__root")).toHaveClass(
-      "container--sm",
+      "container--max-sm",
     );
 
     rerender(<Container maxWidth="lg">Content</Container>);
     expect(document.querySelector(".container__root")).toHaveClass(
-      "container--lg",
+      "container--max-lg",
     );
   });
 
   it("applies padding classes", () => {
     const { rerender } = render(<Container padding="sm">Content</Container>);
     expect(document.querySelector(".container__root")).toHaveClass(
-      "container--sm",
+      "container--padding-sm",
     );
 
     rerender(<Container padding="lg">Content</Container>);
     expect(document.querySelector(".container__root")).toHaveClass(
-      "container--lg",
+      "container--padding-lg",
     );
   });
 

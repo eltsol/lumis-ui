@@ -50,6 +50,10 @@
     opacity: 0.5;
     cursor: not-allowed;
   }
+  &__root[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
   &__icon {
     display: inline-flex;
   }

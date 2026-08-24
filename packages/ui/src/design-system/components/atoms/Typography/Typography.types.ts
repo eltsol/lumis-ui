@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from "react";
+import type { ElementType, HTMLAttributes, ReactNode } from "react";
 
 export type TypographyVariants =
     | "h1"
@@ -13,5 +13,6 @@ export type TypographyVariants =
 
 export interface TypographyProps extends HTMLAttributes<HTMLElement> {
     variant?: TypographyVariants;
+    as?: ElementType;
     children: ReactNode;
 }

@@ -36,4 +36,13 @@ describe("Typography", () => {
     render(<Typography data-testid="typo">Test</Typography>);
     expect(screen.getByTestId("typo")).toBeInTheDocument();
   });
+
+  it("merges a custom class with the variant classes", () => {
+    render(<Typography className="custom">Test</Typography>);
+    expect(screen.getByText("Test")).toHaveClass(
+      "typography",
+      "typography--body1",
+      "custom",
+    );
+  });
 });

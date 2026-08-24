@@ -13,7 +13,13 @@ export const Icon = ({
     .join(" ");
 
   return (
-    <span className={iconClassName} role="img" aria-label={label} {...props}>
+    <span
+      className={iconClassName}
+      role={label ? "img" : undefined}
+      aria-label={label}
+      aria-hidden={label ? undefined : true}
+      {...props}
+    >
       {children}
     </span>
   );

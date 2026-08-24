@@ -3,7 +3,9 @@ import { TypographyProps } from "./Typography.types";
 
 export const Typography = ({
   variant = "body1",
+  as,
   children,
+  className,
   ...props
 }: TypographyProps) => {
   const getTag = () => {
@@ -25,10 +27,15 @@ export const Typography = ({
     }
   };
 
-  const Tag = getTag();
+  const Tag = as || getTag();
 
   return (
-    <Tag className={`typography typography--${variant}`} {...props}>
+    <Tag
+      className={["typography", `typography--${variant}`, className]
+        .filter(Boolean)
+        .join(" ")}
+      {...props}
+    >
       {children}
     </Tag>
   );

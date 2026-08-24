@@ -11,8 +11,8 @@ export const Container = ({
 }: ContainerProps) => {
   const containerClassName = [
     "container container__root",
-    `container--${maxWidth}`,
-    `container--${padding}`,
+    `container--max-${maxWidth}`,
+    `container--padding-${padding}`,
     centered ? "container--centered" : "",
     className,
   ]

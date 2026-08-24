@@ -1,3 +1,5 @@
+"use client";
+
 import { useContext } from "react";
 import "./ThemeToggle.scss";
 import { ThemeToggleProps } from "./ThemeToggle.types";
@@ -18,8 +20,8 @@ export const ThemeToggle = ({ className, ...props }: ThemeToggleProps) => {
       aria-label={`Switch to ${mode === "light" ? "dark" : "light"} mode`}
       {...props}
     >
-      <span className="theme-toggle__icon">
-        {mode === "light" ? "🌙" : "☀️"}
+      <span className="theme-toggle__icon" aria-hidden="true">
+        {mode === "light" ? "\u{1F319}" : "\u2600\uFE0F"}
       </span>
     </button>
   );

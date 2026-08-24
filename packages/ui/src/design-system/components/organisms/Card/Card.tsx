@@ -6,19 +6,21 @@ export const Card = ({
   clickable = false,
   padding = "md",
   children,
+  className,
   ...props
 }: CardProps) => {
-  const className = [
+  const cardClassName = [
     "card card__root",
     `card--${padding}`,
     hoverable ? "card--hoverable" : "",
     clickable ? "card--clickable" : "",
+    className,
   ]
     .filter(Boolean)
     .join(" ");
 
   return (
-    <div className={className} {...props}>
+    <div className={cardClassName} {...props}>
       {children}
     </div>
   );
