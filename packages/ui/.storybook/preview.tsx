@@ -1,8 +1,18 @@
-import type { Preview } from "@storybook/react-vite";
+import type { Decorator, Preview } from "@storybook/react-vite";
 import { ThemeProvider } from "../src/design-system/providers";
 import "../src/design-system/tokens.css";
 
+const withTheme: Decorator = (Story, context) => {
+  const mode = context.globals.theme || "light";
+  return (
+    <ThemeProvider defaultMode={mode}>
+      <Story />
+    </ThemeProvider>
+  );
+};
+
 const preview: Preview = {
+  tags: ["autodocs"],
   parameters: {
     controls: {
       matchers: {
@@ -14,17 +24,11 @@ const preview: Preview = {
     a11y: {
       test: "todo",
     },
-  },
-  decorators: [
-    (Story, context: any) => {
-      const mode = context.globals.theme || "light";
-      return (
-        <ThemeProvider defaultMode={mode}>
-          <Story />
-        </ThemeProvider>
-      );
+    docs: {
+      toc: true,
     },
-  ],
+  },
+  decorators: [withTheme],
   globalTypes: {
     theme: {
       name: "Theme",

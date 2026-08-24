@@ -18,6 +18,12 @@ const foundations = [
   { name: "Motion", detail: "Purposeful duration and easing tokens", visual: "motion" },
 ];
 
+const storybookUrl =
+  process.env.NEXT_PUBLIC_STORYBOOK_URL ?? "http://localhost:6006";
+
+const getStorybookDocsUrl = (group: string, component: string) =>
+  `${storybookUrl}/?path=/docs/${group.toLowerCase()}-${component.toLowerCase()}--docs`;
+
 export default function Page() {
   const [query, setQuery] = useState("");
   const [copied, setCopied] = useState(false);
@@ -60,7 +66,7 @@ export default function Page() {
               <Chip label="Design system" variant="primary" size="sm" />
               <h1>Build cohesive interfaces with confidence.</h1>
               <p>Lumis UI is an accessible, themeable React design system with typed components and shared foundations for consistent product development.</p>
-              <div className={styles.heroActions}><a className={styles.primaryButton} href="#installation">Get started <span>→</span></a><a className={styles.textButton} href="#components">Browse components</a></div>
+              <div className={styles.heroActions}><a className={styles.primaryButton} href="#installation">Get started <span>→</span></a><a className={styles.textButton} href={`${storybookUrl}/?path=/docs/getting-started-welcome--docs`} target="_blank" rel="noreferrer">Open Storybook ↗</a></div>
             </div>
             <div className={styles.codePreview} aria-label="Button usage example">
               <div className={styles.codeHeader}><span>ButtonExample.tsx</span><span>TSX</span></div>
@@ -89,7 +95,7 @@ export default function Page() {
 
           <section className={styles.section} id="components">
             <div className={styles.sectionHeading}><p>Components</p><h2>Composable building blocks.</h2><span>Every component includes a typed API, usage stories, interaction tests, and theme support.</span></div>
-            {filteredGroups.length ? <div className={styles.componentGroups}>{filteredGroups.map((group) => <div className={styles.componentGroup} key={group.title}><div className={styles.groupTitle}><h3>{group.title}</h3><span>{group.items.length} components</span></div><div className={styles.componentGrid}>{group.items.map((item) => <a href={item === "Button" ? "/components/button" : `#${item.toLowerCase()}`} key={item}><span className={styles.componentIcon}>{item.slice(0, 1)}</span><strong>{item}</strong><span aria-hidden="true">→</span></a>)}</div></div>)}</div> : <div className={styles.emptyState}><strong>No components found</strong><p>Try a different search term.</p></div>}
+            {filteredGroups.length ? <div className={styles.componentGroups}>{filteredGroups.map((group) => <div className={styles.componentGroup} key={group.title}><div className={styles.groupTitle}><h3>{group.title}</h3><span>{group.items.length} components</span></div><div className={styles.componentGrid}>{group.items.map((item) => <a href={getStorybookDocsUrl(group.title, item)} target="_blank" rel="noreferrer" key={item}><span className={styles.componentIcon}>{item.slice(0, 1)}</span><strong>{item}</strong><span aria-hidden="true">↗</span></a>)}</div></div>)}</div> : <div className={styles.emptyState}><strong>No components found</strong><p>Try a different search term.</p></div>}
           </section>
 
           <footer className={styles.footer}><p>Lumis UI · Built by Elena Tsolakou</p><div><a href="mailto:el.tsolakou@gmail.com">Contact</a><a href="https://github.com/eltsol/lumis-ui" target="_blank" rel="noreferrer">GitHub</a></div></footer>

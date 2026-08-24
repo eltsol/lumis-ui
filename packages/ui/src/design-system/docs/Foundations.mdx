@@ -1,0 +1,42 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundations/Overview" />
+
+# Foundations
+
+Foundations encode the visual decisions shared by every Lumis UI component.
+They are exposed as typed tokens and CSS custom properties so design intent
+stays consistent across themes and product surfaces.
+
+## Color
+
+Use semantic roles such as `primary`, `surface`, `onSurface`, `outline`,
+`success`, `warning`, and `error`. Components should consume semantic roles
+instead of raw palette values.
+
+| Token | Purpose |
+| --- | --- |
+| `--lm-color-primary` | Primary actions and emphasis |
+| `--lm-color-surface` | Component surfaces |
+| `--lm-color-on-surface` | Content placed on surfaces |
+| `--lm-color-outline` | Borders and separators |
+
+## Spacing
+
+The spatial scale follows a 4px foundation: `xs`, `sm`, `md`, `lg`, `xl`, and
+`xxl`. Prefer the closest token over introducing one-off spacing values.
+
+## Typography
+
+Typography tokens define hierarchy for headings, body copy, and captions.
+Use the `Typography` component to preserve semantic markup and consistent styles.
+
+## Shape, elevation, and motion
+
+Shape tokens establish a shared radius language. Elevation communicates layer
+relationships, while motion tokens keep durations and easing predictable.
+
+## Themes
+
+Use the theme toolbar to review every story in light and dark mode. Components
+must rely on semantic tokens so they adapt without component-level overrides.
