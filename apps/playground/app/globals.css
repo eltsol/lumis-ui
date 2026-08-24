@@ -109,10 +109,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.imgDark {
-  display: none;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -122,12 +118,5 @@ html {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
-  }
-
-  .imgLight {
-    display: none;
-  }
-  .imgDark {
-    display: unset;
   }
 }
