@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@repo/ui/tokens.css";
-import { ThemeProvider } from "@repo/ui";
+import { ThemeProvider } from "@ui/design-system/providers";
 import "./globals.css";
+import React from "react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,8 +15,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Lumis UI Portfolio",
-  description: "Design system portfolio",
+  title: "Elena Tsolakou | Senior UI Engineer",
+  description:
+    "Senior UI Engineer specializing in accessible, scalable design systems. Explore Lumis UI, a themeable React component system.",
 };
 
 export default function RootLayout({
@@ -24,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>

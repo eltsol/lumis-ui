@@ -1,9 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap");
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-family: "Roboto", system-ui, -apple-system, sans-serif;
+  --font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
 
   /* Lumis Design Tokens */
   --lm-color-primary: #6750a4;
@@ -83,6 +81,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
 }
 
 * {
@@ -96,8 +95,28 @@ a {
   text-decoration: none;
 }
 
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--lm-color-primary) 70%, white);
+  outline-offset: 4px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .imgDark {
   display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
