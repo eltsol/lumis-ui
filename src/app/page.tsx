@@ -33,7 +33,8 @@ const Arrow = ({ direction = "right" }: { direction?: "right" | "down" | "extern
 
 export default function Page() {
   return (
-    <main className={styles.page}>
+    <div className={styles.page}>
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <header>
         <Container maxWidth="xl" padding="lg">
           <Grid direction="row" align="center" justify="between" className={styles.header}>
@@ -51,6 +52,7 @@ export default function Page() {
         </Container>
       </header>
 
+      <main id="main-content" tabIndex={-1}>
       <section id="top" className={styles.heroSection}>
         <Container maxWidth="xl" padding="lg">
           <Grid columns="minmax(0, 1.02fr) minmax(430px, .98fr)" gap="xl" className={styles.heroGrid}>
@@ -60,11 +62,11 @@ export default function Page() {
               <Typography className={styles.heroText}>I&apos;m Elena Tsolakou. I build accessible design systems that connect design and engineering, helping teams create cohesive digital products with confidence.</Typography>
               <Grid direction="row" gap="sm" wrap className={styles.heroActions}>
                 <Button href="#work" size="lg" trailingIcon={<Arrow direction="down" />}>Explore Lumis UI</Button>
-                <Button href="https://github.com/eltsol/lumis-ui" target="_blank" rel="noreferrer" variant="secondary" size="lg" trailingIcon={<Arrow direction="external" />}>View source</Button>
+                <Button href="https://github.com/eltsol/lumis-ui" target="_blank" rel="noreferrer" aria-label="View Lumis UI source on GitHub (opens in a new tab)" variant="secondary" size="lg" trailingIcon={<Arrow direction="external" />}>View source</Button>
               </Grid>
             </Grid>
 
-            <div className={styles.heroVisual} aria-label="Lumis UI component preview">
+            <div className={styles.heroVisual} aria-hidden="true">
               <div className={styles.visualGlow} />
               <Card padding="none" className={styles.previewWindow}>
                 <Grid direction="row" align="center" justify="between" className={styles.windowBar}>
@@ -74,12 +76,12 @@ export default function Page() {
                 </Grid>
                 <Grid gap="lg" className={styles.previewContent}>
                   <Grid direction="row" align="start" justify="between">
-                    <Grid gap="xs"><Typography variant="caption">Team overview</Typography><Typography variant="h4">Design system health</Typography></Grid>
+                    <Grid gap="xs"><Typography variant="caption">Team overview</Typography><Typography variant="h4" as="p">Design system health</Typography></Grid>
                     <Chip label="Stable" variant="success" size="sm" />
                   </Grid>
                   <Grid columns={2} gap="sm">
-                    <Card padding="md" className={styles.previewCard}><Grid gap="xs"><Typography variant="caption">Components</Typography><Typography variant="h3">23</Typography><Typography variant="caption">Atoms to organisms</Typography></Grid></Card>
-                    <Card padding="md" className={styles.previewCard}><Grid gap="xs"><Typography variant="caption">Coverage</Typography><Typography variant="h3">100%</Typography><Typography variant="caption">Stories and tests</Typography></Grid></Card>
+                    <Card padding="md" className={styles.previewCard}><Grid gap="xs"><Typography variant="caption">Components</Typography><Typography variant="h3" as="p">23</Typography><Typography variant="caption">Atoms to organisms</Typography></Grid></Card>
+                    <Card padding="md" className={styles.previewCard}><Grid gap="xs"><Typography variant="caption">Coverage</Typography><Typography variant="h3" as="p">100%</Typography><Typography variant="caption">Stories and tests</Typography></Grid></Card>
                   </Grid>
                   <Card padding="md" className={styles.activityCard}>
                     <Grid gap="lg">
@@ -98,7 +100,7 @@ export default function Page() {
       <Divider />
       <Container maxWidth="full" padding="none">
         <Grid columns={4} gap="none" className={styles.metrics}>
-          {[["23", "Components"], ["2", "Color themes"], ["23", "Story files"], ["6", "Token foundations"]].map(([value, label]) => <Grid key={label} gap="xs" align="center" justify="center"><Typography variant="h2">{value}</Typography><Typography variant="caption">{label}</Typography></Grid>)}
+          {[["23", "Components"], ["2", "Color themes"], ["23", "Story files"], ["6", "Token foundations"]].map(([value, label]) => <Grid key={label} gap="xs" align="center" justify="center"><Typography variant="h2" as="p">{value}</Typography><Typography variant="caption">{label}</Typography></Grid>)}
         </Grid>
       </Container>
       <Divider />
@@ -119,10 +121,10 @@ export default function Page() {
                   <Grid gap="lg" align="start"><Typography>A themeable React design system covering foundations, accessible components, documentation, and testing. Every layer is designed to make consistency easier to achieve and maintain.</Typography><Button href="/work/lumis-ui" variant="ghost" trailingIcon={<Arrow />}>Read the case study</Button></Grid>
                 </Grid>
               </Grid>
-              <div className={styles.componentCanvas}>
+              <div className={styles.componentCanvas} aria-hidden="true" inert>
                 <Grid align="center" gap="xl" className={styles.componentSidebar}><Badge className={styles.canvasLogo}>L</Badge><Badge dotOnly /><Badge dotOnly variant="secondary" /><Badge dotOnly variant="secondary" /><Badge dotOnly variant="secondary" /></Grid>
                 <Grid columns="1fr 220px" gap="none" className={styles.componentMain}>
-                  <Grid direction="row" align="center" justify="between" className={styles.canvasHeader}><Grid gap="xs"><Typography variant="caption">Components</Typography><Typography variant="h5">Button</Typography></Grid><Chip label="v0.1" variant="primary" size="sm" /></Grid>
+                  <Grid direction="row" align="center" justify="between" className={styles.canvasHeader}><Grid gap="xs"><Typography variant="caption">Components</Typography><Typography variant="h5" as="p">Button</Typography></Grid><Chip label="v0.1" variant="primary" size="sm" /></Grid>
                   <Grid direction="row" align="center" justify="center" gap="sm" wrap className={styles.componentStage}><Button>Primary action</Button><Button variant="secondary">Secondary</Button><Button variant="ghost">Ghost action</Button></Grid>
                   <Grid gap="md" className={styles.componentProps}>{[["variant", "primary"], ["size", "medium"], ["state", "enabled"]].map(([name, value]) => <Grid direction="row" justify="between" key={name}><Typography variant="caption">{name}</Typography><code>{value}</code></Grid>)}</Grid>
                 </Grid>
@@ -135,14 +137,14 @@ export default function Page() {
       <section id="approach" className={`${styles.section} ${styles.approachSection}`}>
         <Container maxWidth="xl" padding="lg"><Grid gap="xl">
           <Grid columns="1fr 3fr" gap="xl" className={styles.sectionIntro}><Badge size="sm">02 / Approach</Badge><Grid columns="1.5fr 1fr" gap="xl"><Typography variant="h2" className={styles.sectionTitle}>Engineering the invisible details.</Typography><Typography>Strong design systems turn thoughtful constraints into a better experience for users and product teams.</Typography></Grid></Grid>
-          <Grid columns={3} gap="md" className={styles.principleGrid}>{principles.map(([number, title, description]) => <Card padding="lg" hoverable key={number}><Grid gap="lg"><Badge size="sm">{number}</Badge><Grid gap="sm"><Typography variant="h4">{title}</Typography><Typography variant="body2">{description}</Typography></Grid></Grid></Card>)}</Grid>
+          <Grid columns={3} gap="md" className={styles.principleGrid}>{principles.map(([number, title, description]) => <Card padding="lg" hoverable key={number}><Grid gap="lg"><Badge size="sm">{number}</Badge><Grid gap="sm"><Typography variant="h4" as="h3">{title}</Typography><Typography variant="body2">{description}</Typography></Grid></Grid></Card>)}</Grid>
         </Grid></Container>
       </section>
 
       <section id="architecture" className={`${styles.section} ${styles.architectureSection}`}>
         <Container maxWidth="xl" padding="lg"><Grid columns="1fr 1.15fr" gap="xl" className={styles.architectureGrid}>
           <Grid gap="lg" align="start"><Badge size="sm">03 / Architecture</Badge><Typography variant="h2" className={styles.sectionTitle}>From foundations to product patterns.</Typography><Typography>Lumis UI separates design decisions from implementation, creating a system that can evolve without losing its visual language.</Typography></Grid>
-          <Grid gap="sm">{systemLayers.map(([number, title, description]) => <Card padding="md" hoverable className={styles.layerCard} key={number}><Grid columns="42px 130px 1fr 20px" gap="md"><Badge size="sm">{number}</Badge><Typography variant="h6">{title}</Typography><Typography variant="body2">{description}</Typography><Arrow direction="external" /></Grid></Card>)}</Grid>
+          <Grid gap="sm">{systemLayers.map(([number, title, description]) => <Card padding="md" hoverable className={styles.layerCard} key={number}><Grid columns="42px 130px 1fr 20px" gap="md"><Badge size="sm">{number}</Badge><Typography variant="h6" as="h3">{title}</Typography><Typography variant="body2">{description}</Typography><Arrow direction="external" /></Grid></Card>)}</Grid>
         </Grid></Container>
       </section>
 
@@ -151,9 +153,10 @@ export default function Page() {
       </section>
 
       <Divider />
+      </main>
       <footer>
-        <Container maxWidth="xl" padding="lg"><Grid direction="row" align="end" justify="between" wrap className={styles.footer}><Grid gap="xs"><Typography variant="h4">ET.</Typography><Typography variant="caption">Senior UI Engineer focused on design systems.</Typography></Grid><Grid direction="row" gap="lg"><Button href="https://github.com/eltsol" target="_blank" rel="noreferrer" variant="ghost" size="sm">GitHub ↗</Button><Button href="mailto:el.tsolakou@gmail.com" variant="ghost" size="sm">Email ↗</Button></Grid><Typography variant="caption">© 2026 Elena Tsolakou</Typography></Grid></Container>
+        <Container maxWidth="xl" padding="lg"><Grid direction="row" align="end" justify="between" wrap className={styles.footer}><Grid gap="xs"><Typography variant="h4" as="p">ET.</Typography><Typography variant="caption">Senior UI Engineer focused on design systems.</Typography></Grid><Grid direction="row" gap="lg"><Button href="https://github.com/eltsol" target="_blank" rel="noreferrer" aria-label="Elena Tsolakou on GitHub (opens in a new tab)" variant="ghost" size="sm" trailingIcon={<Arrow direction="external" />}>GitHub</Button><Button href="mailto:el.tsolakou@gmail.com" variant="ghost" size="sm" trailingIcon={<Arrow direction="external" />}>Email</Button></Grid><Typography variant="caption">© 2026 Elena Tsolakou</Typography></Grid></Container>
       </footer>
-    </main>
+    </div>
   );
 }

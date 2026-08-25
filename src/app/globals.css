@@ -105,6 +105,28 @@ a {
   outline-offset: 4px;
 }
 
+.skip-link {
+  position: fixed;
+  top: var(--lm-spacing-md);
+  left: var(--lm-spacing-md);
+  z-index: 1000;
+  padding: var(--lm-spacing-sm) var(--lm-spacing-md);
+  border-radius: var(--lm-shape-sm);
+  color: var(--lm-color-on-primary);
+  background: var(--lm-color-primary);
+  font-weight: 600;
+  transform: translateY(calc(-100% - var(--lm-spacing-xl)));
+  transition: transform var(--lm-motion-duration-short) var(--lm-motion-easing-standard);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+main:focus {
+  outline: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -112,6 +134,10 @@ html {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .skip-link {
+    transition: none;
   }
 }
 
