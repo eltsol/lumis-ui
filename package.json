@@ -2,8 +2,10 @@
   "name": "@lumis-ui",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
+    "build": "npm run build --workspace portfolio",
+    "dev": "npm run dev --workspace portfolio",
+    "storybook": "npm run storybook --workspace @repo/ui",
+    "test": "npm test --workspace @repo/ui",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"
