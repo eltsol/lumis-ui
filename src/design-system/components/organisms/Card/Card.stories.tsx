@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, fn, userEvent, within } from "storybook/test";
 import { Button } from "../../atoms/Button";
-import { Stack } from "../../layout/Stack";
+import { Grid } from "../../layout/Grid";
 import { Card } from "./Card";
 
 const meta = {
@@ -55,10 +55,10 @@ headings, text, and Lumis UI actions.
     hoverable: false,
     clickable: false,
     children: (
-      <Stack gap="sm">
+      <Grid gap="sm">
         <h3 style={{ margin: 0 }}>Design system foundations</h3>
         <p style={{ margin: 0 }}>Tokens, principles, and accessible patterns for consistent product work.</p>
-      </Stack>
+      </Grid>
     ),
   },
   decorators: [(Story) => <div style={{ width: 360 }}><Story /></div>],
@@ -72,11 +72,11 @@ export const Playground: Story = {};
 export const PaddingOptions: Story = {
   parameters: { controls: { disable: true } },
   render: () => (
-    <Stack gap="md">
+    <Grid gap="md">
       {(["none", "sm", "md", "lg"] as const).map((padding) => (
         <Card key={padding} padding={padding}>Padding: {padding}</Card>
       ))}
-    </Stack>
+    </Grid>
   ),
 };
 
@@ -84,17 +84,17 @@ export const ComposedContent: Story = {
   args: {
     padding: "lg",
     children: (
-      <Stack gap="md">
-        <Stack gap="xs">
+      <Grid gap="md">
+        <Grid gap="xs">
           <span>Case study</span>
           <h3 style={{ margin: 0 }}>Scaling a multi-brand design system</h3>
           <p style={{ margin: 0 }}>A token-led foundation that helped product teams ship consistent interfaces.</p>
-        </Stack>
-        <Stack direction="row" gap="sm">
+        </Grid>
+        <Grid direction="row" gap="sm">
           <Button size="sm">Read case study</Button>
           <Button size="sm" variant="ghost">View system</Button>
-        </Stack>
-      </Stack>
+        </Grid>
+      </Grid>
     ),
   },
 };

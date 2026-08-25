@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, fn, userEvent, within } from "storybook/test";
 import { Button } from "../../atoms/Button";
-import { Stack } from "../../layout/Stack";
+import { Grid } from "../../layout/Grid";
 import { TextField } from "../../molecules/TextField";
 import { Modal } from "./Modal";
 import type { ModalProps } from "./Modal.types";
@@ -74,13 +74,13 @@ and restores focus to the trigger after closing.
     size: "md",
     closeOnOverlayClick: true,
     children: (
-      <Stack gap="lg">
+      <Grid gap="lg">
         <TextField label="Display name" defaultValue="Elena Tsolakou" fullWidth />
-        <Stack direction="row" gap="sm" justify="end">
+        <Grid direction="row" gap="sm" justify="end">
           <Button variant="secondary">Cancel</Button>
           <Button>Save changes</Button>
-        </Stack>
-      </Stack>
+        </Grid>
+      </Grid>
     ),
   },
   render: (args) => <ModalExample {...args} />,

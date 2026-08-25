@@ -9,7 +9,6 @@ import {
   Divider,
   Grid,
   Icon,
-  Stack,
   ThemeToggle,
   Typography,
 } from "@/design-system";
@@ -23,7 +22,7 @@ const principles = [
 
 const systemLayers = [
   ["01", "Foundations", "Color, type, spacing, shape, elevation, and motion"],
-  ["02", "Components", "24 reusable React components with typed APIs"],
+  ["02", "Components", "23 reusable React components with typed APIs"],
   ["03", "Patterns", "Composition guidance for consistent product experiences"],
   ["04", "Tooling", "Storybook, Vitest, accessibility checks, and documentation"],
 ];
@@ -37,58 +36,58 @@ export default function Page() {
     <main className={styles.page}>
       <header>
         <Container maxWidth="xl" padding="lg">
-          <Stack direction="row" align="center" justify="between" className={styles.header}>
+          <Grid direction="row" align="center" justify="between" className={styles.header}>
             <a className={styles.brand} href="#top" aria-label="Elena Tsolakou home">ET<span>.</span></a>
             <nav className={styles.nav} aria-label="Main navigation">
-              <Stack direction="row" gap="xl">
+              <Grid direction="row" gap="xl">
                 <a href="#work">Work</a><a href="#approach">Approach</a><a href="#about">About</a>
-              </Stack>
+              </Grid>
             </nav>
-            <Stack direction="row" align="center" gap="md">
+            <Grid direction="row" align="center" gap="md">
               <ThemeToggle />
               <Button href="mailto:el.tsolakou@gmail.com" variant="ghost" trailingIcon={<Arrow direction="external" />}>Let&apos;s talk</Button>
-            </Stack>
-          </Stack>
+            </Grid>
+          </Grid>
         </Container>
       </header>
 
       <section id="top" className={styles.heroSection}>
         <Container maxWidth="xl" padding="lg">
           <Grid columns="minmax(0, 1.02fr) minmax(430px, .98fr)" gap="xl" className={styles.heroGrid}>
-            <Stack gap="lg" justify="center" className={styles.heroCopy}>
+            <Grid gap="lg" justify="center" className={styles.heroCopy}>
               <Badge size="sm" className={styles.eyebrow}>Senior UI Engineer · Design Systems</Badge>
               <Typography variant="h1" className={styles.heroTitle}>Building consistent <span>interfaces at scale.</span></Typography>
               <Typography className={styles.heroText}>I&apos;m Elena Tsolakou. I build accessible design systems that connect design and engineering, helping teams create cohesive digital products with confidence.</Typography>
-              <Stack direction="row" gap="sm" wrap className={styles.heroActions}>
+              <Grid direction="row" gap="sm" wrap className={styles.heroActions}>
                 <Button href="#work" size="lg" trailingIcon={<Arrow direction="down" />}>Explore Lumis UI</Button>
                 <Button href="https://github.com/eltsol/lumis-ui" target="_blank" rel="noreferrer" variant="secondary" size="lg" trailingIcon={<Arrow direction="external" />}>View source</Button>
-              </Stack>
-            </Stack>
+              </Grid>
+            </Grid>
 
             <div className={styles.heroVisual} aria-label="Lumis UI component preview">
               <div className={styles.visualGlow} />
               <Card padding="none" className={styles.previewWindow}>
-                <Stack direction="row" align="center" justify="between" className={styles.windowBar}>
-                  <Stack direction="row" gap="xs" aria-hidden="true" className={styles.windowDots}><span /><span /><span /></Stack>
+                <Grid direction="row" align="center" justify="between" className={styles.windowBar}>
+                  <Grid direction="row" gap="xs" aria-hidden="true" className={styles.windowDots}><span /><span /><span /></Grid>
                   <Typography variant="caption">lumis-ui / components</Typography>
                   <Badge variant="success" size="sm" dot>Live</Badge>
-                </Stack>
-                <Stack gap="lg" className={styles.previewContent}>
-                  <Stack direction="row" align="start" justify="between">
-                    <Stack gap="xs"><Typography variant="caption">Team overview</Typography><Typography variant="h4">Design system health</Typography></Stack>
+                </Grid>
+                <Grid gap="lg" className={styles.previewContent}>
+                  <Grid direction="row" align="start" justify="between">
+                    <Grid gap="xs"><Typography variant="caption">Team overview</Typography><Typography variant="h4">Design system health</Typography></Grid>
                     <Chip label="Stable" variant="success" size="sm" />
-                  </Stack>
+                  </Grid>
                   <Grid columns={2} gap="sm">
-                    <Card padding="md" className={styles.previewCard}><Stack gap="xs"><Typography variant="caption">Components</Typography><Typography variant="h3">24</Typography><Typography variant="caption">Atoms to organisms</Typography></Stack></Card>
-                    <Card padding="md" className={styles.previewCard}><Stack gap="xs"><Typography variant="caption">Coverage</Typography><Typography variant="h3">100%</Typography><Typography variant="caption">Stories and tests</Typography></Stack></Card>
+                    <Card padding="md" className={styles.previewCard}><Grid gap="xs"><Typography variant="caption">Components</Typography><Typography variant="h3">23</Typography><Typography variant="caption">Atoms to organisms</Typography></Grid></Card>
+                    <Card padding="md" className={styles.previewCard}><Grid gap="xs"><Typography variant="caption">Coverage</Typography><Typography variant="h3">100%</Typography><Typography variant="caption">Stories and tests</Typography></Grid></Card>
                   </Grid>
                   <Card padding="md" className={styles.activityCard}>
-                    <Stack gap="lg">
-                      <Stack direction="row" justify="between" align="start"><Stack gap="xs"><Typography variant="caption">System model</Typography><Typography variant="body2">Consistent by design</Typography></Stack><Badge variant="success" size="sm">Token-driven</Badge></Stack>
+                    <Grid gap="lg">
+                      <Grid direction="row" justify="between" align="start"><Grid gap="xs"><Typography variant="caption">System model</Typography><Typography variant="body2">Consistent by design</Typography></Grid><Badge variant="success" size="sm">Token-driven</Badge></Grid>
                       <div className={styles.chart} aria-hidden="true">{[35, 48, 42, 61, 57, 72, 84, 92].map((height, index) => <span key={index} style={{ height: `${height}%` }} />)}</div>
-                    </Stack>
+                    </Grid>
                   </Card>
-                </Stack>
+                </Grid>
               </Card>
               <Chip label="--lm-color-primary" variant="primary" size="sm" className={styles.tokenTag} />
             </div>
@@ -99,61 +98,61 @@ export default function Page() {
       <Divider />
       <Container maxWidth="full" padding="none">
         <Grid columns={4} gap="none" className={styles.metrics}>
-          {[["24", "Components"], ["2", "Color themes"], ["24", "Story files"], ["6", "Token foundations"]].map(([value, label]) => <Stack key={label} gap="xs" align="center" justify="center"><Typography variant="h2">{value}</Typography><Typography variant="caption">{label}</Typography></Stack>)}
+          {[["23", "Components"], ["2", "Color themes"], ["23", "Story files"], ["6", "Token foundations"]].map(([value, label]) => <Grid key={label} gap="xs" align="center" justify="center"><Typography variant="h2">{value}</Typography><Typography variant="caption">{label}</Typography></Grid>)}
         </Grid>
       </Container>
       <Divider />
 
       <section id="work" className={styles.section}>
         <Container maxWidth="xl" padding="lg">
-          <Stack gap="xl">
+          <Grid gap="xl">
             <Grid columns="1fr 3fr" gap="xl" className={styles.sectionIntro}>
               <Badge size="sm">01 / Selected work</Badge>
               <Grid columns="1.5fr 1fr" gap="xl"><Typography variant="h2" className={styles.sectionTitle}>A system, not just a component library.</Typography><Typography>Lumis UI explores what it takes to create a dependable shared language between design and development.</Typography></Grid>
             </Grid>
             <Card padding="none" className={styles.projectCard}>
-              <Stack gap="xl" className={styles.projectContent}>
-                <Stack direction="row" justify="between" wrap><Typography variant="caption">Featured project · 2026</Typography><Typography variant="caption">React 19 · TypeScript · Storybook</Typography></Stack>
+              <Grid gap="xl" className={styles.projectContent}>
+                <Grid direction="row" justify="between" wrap><Typography variant="caption">Featured project · 2026</Typography><Typography variant="caption">React 19 · TypeScript · Storybook</Typography></Grid>
                 <Divider />
                 <Grid columns="1.2fr 1fr" gap="xl" className={styles.projectGrid}>
-                  <Stack gap="sm"><Badge size="sm">Lumis UI</Badge><Typography variant="h2" className={styles.projectTitle}>Foundations for cohesive product experiences.</Typography></Stack>
-                  <Stack gap="lg" align="start"><Typography>A themeable React design system covering foundations, accessible components, documentation, and testing. Every layer is designed to make consistency easier to achieve and maintain.</Typography><Button href="#architecture" variant="ghost" trailingIcon={<Arrow />}>Explore the architecture</Button></Stack>
+                  <Grid gap="sm"><Badge size="sm">Lumis UI</Badge><Typography variant="h2" className={styles.projectTitle}>Foundations for cohesive product experiences.</Typography></Grid>
+                  <Grid gap="lg" align="start"><Typography>A themeable React design system covering foundations, accessible components, documentation, and testing. Every layer is designed to make consistency easier to achieve and maintain.</Typography><Button href="#architecture" variant="ghost" trailingIcon={<Arrow />}>Explore the architecture</Button></Grid>
                 </Grid>
-              </Stack>
+              </Grid>
               <div className={styles.componentCanvas}>
-                <Stack align="center" gap="xl" className={styles.componentSidebar}><Badge className={styles.canvasLogo}>L</Badge><Badge dotOnly /><Badge dotOnly variant="secondary" /><Badge dotOnly variant="secondary" /><Badge dotOnly variant="secondary" /></Stack>
+                <Grid align="center" gap="xl" className={styles.componentSidebar}><Badge className={styles.canvasLogo}>L</Badge><Badge dotOnly /><Badge dotOnly variant="secondary" /><Badge dotOnly variant="secondary" /><Badge dotOnly variant="secondary" /></Grid>
                 <Grid columns="1fr 220px" gap="none" className={styles.componentMain}>
-                  <Stack direction="row" align="center" justify="between" className={styles.canvasHeader}><Stack gap="xs"><Typography variant="caption">Components</Typography><Typography variant="h5">Button</Typography></Stack><Chip label="v0.1" variant="primary" size="sm" /></Stack>
-                  <Stack direction="row" align="center" justify="center" gap="sm" wrap className={styles.componentStage}><Button>Primary action</Button><Button variant="secondary">Secondary</Button><Button variant="ghost">Ghost action</Button></Stack>
-                  <Stack gap="md" className={styles.componentProps}>{[["variant", "primary"], ["size", "medium"], ["state", "enabled"]].map(([name, value]) => <Stack direction="row" justify="between" key={name}><Typography variant="caption">{name}</Typography><code>{value}</code></Stack>)}</Stack>
+                  <Grid direction="row" align="center" justify="between" className={styles.canvasHeader}><Grid gap="xs"><Typography variant="caption">Components</Typography><Typography variant="h5">Button</Typography></Grid><Chip label="v0.1" variant="primary" size="sm" /></Grid>
+                  <Grid direction="row" align="center" justify="center" gap="sm" wrap className={styles.componentStage}><Button>Primary action</Button><Button variant="secondary">Secondary</Button><Button variant="ghost">Ghost action</Button></Grid>
+                  <Grid gap="md" className={styles.componentProps}>{[["variant", "primary"], ["size", "medium"], ["state", "enabled"]].map(([name, value]) => <Grid direction="row" justify="between" key={name}><Typography variant="caption">{name}</Typography><code>{value}</code></Grid>)}</Grid>
                 </Grid>
               </div>
             </Card>
-          </Stack>
+          </Grid>
         </Container>
       </section>
 
       <section id="approach" className={`${styles.section} ${styles.approachSection}`}>
-        <Container maxWidth="xl" padding="lg"><Stack gap="xl">
+        <Container maxWidth="xl" padding="lg"><Grid gap="xl">
           <Grid columns="1fr 3fr" gap="xl" className={styles.sectionIntro}><Badge size="sm">02 / Approach</Badge><Grid columns="1.5fr 1fr" gap="xl"><Typography variant="h2" className={styles.sectionTitle}>Engineering the invisible details.</Typography><Typography>Strong design systems turn thoughtful constraints into a better experience for users and product teams.</Typography></Grid></Grid>
-          <Grid columns={3} gap="md" className={styles.principleGrid}>{principles.map(([number, title, description]) => <Card padding="lg" hoverable key={number}><Stack gap="lg"><Badge size="sm">{number}</Badge><Stack gap="sm"><Typography variant="h4">{title}</Typography><Typography variant="body2">{description}</Typography></Stack></Stack></Card>)}</Grid>
-        </Stack></Container>
+          <Grid columns={3} gap="md" className={styles.principleGrid}>{principles.map(([number, title, description]) => <Card padding="lg" hoverable key={number}><Grid gap="lg"><Badge size="sm">{number}</Badge><Grid gap="sm"><Typography variant="h4">{title}</Typography><Typography variant="body2">{description}</Typography></Grid></Grid></Card>)}</Grid>
+        </Grid></Container>
       </section>
 
       <section id="architecture" className={`${styles.section} ${styles.architectureSection}`}>
         <Container maxWidth="xl" padding="lg"><Grid columns="1fr 1.15fr" gap="xl" className={styles.architectureGrid}>
-          <Stack gap="lg" align="start"><Badge size="sm">03 / Architecture</Badge><Typography variant="h2" className={styles.sectionTitle}>From foundations to product patterns.</Typography><Typography>Lumis UI separates design decisions from implementation, creating a system that can evolve without losing its visual language.</Typography></Stack>
-          <Stack gap="sm">{systemLayers.map(([number, title, description]) => <Card padding="md" hoverable className={styles.layerCard} key={number}><Grid columns="42px 130px 1fr 20px" gap="md"><Badge size="sm">{number}</Badge><Typography variant="h6">{title}</Typography><Typography variant="body2">{description}</Typography><Arrow direction="external" /></Grid></Card>)}</Stack>
+          <Grid gap="lg" align="start"><Badge size="sm">03 / Architecture</Badge><Typography variant="h2" className={styles.sectionTitle}>From foundations to product patterns.</Typography><Typography>Lumis UI separates design decisions from implementation, creating a system that can evolve without losing its visual language.</Typography></Grid>
+          <Grid gap="sm">{systemLayers.map(([number, title, description]) => <Card padding="md" hoverable className={styles.layerCard} key={number}><Grid columns="42px 130px 1fr 20px" gap="md"><Badge size="sm">{number}</Badge><Typography variant="h6">{title}</Typography><Typography variant="body2">{description}</Typography><Arrow direction="external" /></Grid></Card>)}</Grid>
         </Grid></Container>
       </section>
 
       <section id="about" className={styles.section}>
-        <Container maxWidth="xl" padding="lg"><Stack gap="xl"><Badge size="sm">04 / About</Badge><Grid columns="1.45fr 1fr" gap="xl" className={styles.aboutGrid}><Typography variant="h2" className={styles.sectionTitle}>I turn complex UI decisions into systems teams can trust.</Typography><Stack gap="lg" align="start"><Typography>As a Senior UI Engineer, I work at the intersection of design, frontend architecture, and developer experience. I care about the details that make interfaces feel coherent—and the systems that keep them that way as products grow.</Typography><Button href="mailto:el.tsolakou@gmail.com" variant="ghost" trailingIcon={<Arrow direction="external" />}>Start a conversation</Button></Stack></Grid></Stack></Container>
+        <Container maxWidth="xl" padding="lg"><Grid gap="xl"><Badge size="sm">04 / About</Badge><Grid columns="1.45fr 1fr" gap="xl" className={styles.aboutGrid}><Typography variant="h2" className={styles.sectionTitle}>I turn complex UI decisions into systems teams can trust.</Typography><Grid gap="lg" align="start"><Typography>As a Senior UI Engineer, I work at the intersection of design, frontend architecture, and developer experience. I care about the details that make interfaces feel coherent—and the systems that keep them that way as products grow.</Typography><Button href="mailto:el.tsolakou@gmail.com" variant="ghost" trailingIcon={<Arrow direction="external" />}>Start a conversation</Button></Grid></Grid></Grid></Container>
       </section>
 
       <Divider />
       <footer>
-        <Container maxWidth="xl" padding="lg"><Stack direction="row" align="end" justify="between" wrap className={styles.footer}><Stack gap="xs"><Typography variant="h4">ET.</Typography><Typography variant="caption">Senior UI Engineer focused on design systems.</Typography></Stack><Stack direction="row" gap="lg"><Button href="https://github.com/eltsol" target="_blank" rel="noreferrer" variant="ghost" size="sm">GitHub ↗</Button><Button href="mailto:el.tsolakou@gmail.com" variant="ghost" size="sm">Email ↗</Button></Stack><Typography variant="caption">© 2026 Elena Tsolakou</Typography></Stack></Container>
+        <Container maxWidth="xl" padding="lg"><Grid direction="row" align="end" justify="between" wrap className={styles.footer}><Grid gap="xs"><Typography variant="h4">ET.</Typography><Typography variant="caption">Senior UI Engineer focused on design systems.</Typography></Grid><Grid direction="row" gap="lg"><Button href="https://github.com/eltsol" target="_blank" rel="noreferrer" variant="ghost" size="sm">GitHub ↗</Button><Button href="mailto:el.tsolakou@gmail.com" variant="ghost" size="sm">Email ↗</Button></Grid><Typography variant="caption">© 2026 Elena Tsolakou</Typography></Grid></Container>
       </footer>
     </main>
   );

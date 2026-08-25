@@ -21,5 +21,4 @@ export * from "./organisms/Card";
 export * from "./organisms/Modal";
 export * from "./layout/Container";
 export * from "./layout/Grid";
-export * from "./layout/Stack";
 // Alert component pending

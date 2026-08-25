@@ -16,6 +16,15 @@ const Box = ({ children }: { children: string }) => (
 export default {
   title: "Layout/Grid",
   component: Grid,
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Grid is the shared layout primitive for column-based compositions and directional rows. Use columns for two-dimensional layouts, or direction for aligned action groups and navigation.",
+      },
+    },
+  },
 };
 
 export const TwoColumns = {
@@ -58,6 +67,23 @@ export const CustomColumns = {
       <>
         <Box>Main</Box>
         <Box>Side</Box>
+      </>
+    ),
+  },
+};
+
+export const DirectionalRow = {
+  args: {
+    direction: "row",
+    gap: "md",
+    align: "center",
+    justify: "between",
+    wrap: true,
+    children: (
+      <>
+        <Box>Start</Box>
+        <Box>Center</Box>
+        <Box>End</Box>
       </>
     ),
   },

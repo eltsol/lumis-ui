@@ -84,7 +84,7 @@
 
 @media (max-width: 640px) {
   .header { min-height: 72px; }
-  .header > :global(.stack):last-child > :global(.button) { display: none; }
+  .header > :global(.grid):last-child > :global(.button) { display: none; }
   .heroSection { padding: 64px 0 80px; }
   .heroTitle { font-size: clamp(46px, 15vw, 64px); }
   .heroVisual { min-height: 400px; }

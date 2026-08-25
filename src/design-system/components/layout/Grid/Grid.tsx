@@ -2,26 +2,37 @@ import "./Grid.scss";
 import { GridProps } from "./Grid.types";
 
 export const Grid = ({
-  columns = 1,
+  columns,
+  direction,
   gap = "md",
+  align,
+  justify,
+  wrap = false,
   children,
   className,
+  style,
   ...props
 }: GridProps) => {
+  const resolvedColumns = columns ?? (direction ? undefined : 1);
   const gridClassName = [
     "grid grid__root",
     `grid--${gap}`,
-    typeof columns === "number" ? `grid--cols-${columns}` : "",
+    typeof resolvedColumns === "number" ? `grid--cols-${resolvedColumns}` : "",
+    direction ? "grid--directional" : "",
+    direction ? `grid--direction-${direction}` : "",
+    align ? `grid--align-${align}` : "",
+    justify ? `grid--justify-${justify}` : "",
+    wrap ? "grid--wrap" : "",
     className,
   ]
     .filter(Boolean)
     .join(" ");
 
   const customColumns =
-    typeof columns === "string" ? { gridTemplateColumns: columns } : {};
+    typeof resolvedColumns === "string" ? { gridTemplateColumns: resolvedColumns } : {};
 
   return (
-    <div className={gridClassName} style={customColumns} {...props}>
+    <div className={gridClassName} style={{ ...customColumns, ...style }} {...props}>
       {children}
     </div>
   );

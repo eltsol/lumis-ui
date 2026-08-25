@@ -67,6 +67,34 @@ describe("Grid", () => {
     });
   });
 
+  it("supports directional layouts with alignment and wrapping", () => {
+    render(
+      <Grid direction="row" align="center" justify="between" wrap>
+        <div>First</div>
+        <div>Second</div>
+      </Grid>,
+    );
+    expect(document.querySelector(".grid__root")).toHaveClass(
+      "grid--directional",
+      "grid--direction-row",
+      "grid--align-center",
+      "grid--justify-between",
+      "grid--wrap",
+    );
+  });
+
+  it("merges custom column styles with consumer styles", () => {
+    render(
+      <Grid columns="1fr 2fr" style={{ minHeight: 120 }}>
+        <div>Item</div>
+      </Grid>,
+    );
+    expect(document.querySelector(".grid__root")).toHaveStyle({
+      gridTemplateColumns: "1fr 2fr",
+      minHeight: "120px",
+    });
+  });
+
   it("forwards custom className", () => {
     render(
       <Grid className="custom">
