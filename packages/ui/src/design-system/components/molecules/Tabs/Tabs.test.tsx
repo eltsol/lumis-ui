@@ -83,6 +83,33 @@ describe("Tabs", () => {
     expect(document.querySelector('[role="tablist"]')).toBeInTheDocument();
   });
 
+  it("moves focus and selection with arrow keys", async () => {
+    const handleChange = vi.fn();
+    const user = userEvent.setup();
+    render(<Tabs tabs={tabs} value="tab1" onChange={handleChange} />);
+    const tabButtons = screen.getAllByRole("tab");
+    tabButtons[0]?.focus();
+    await user.keyboard("{ArrowRight}");
+    expect(tabButtons[1]).toHaveFocus();
+    expect(handleChange).toHaveBeenCalledWith("tab2");
+  });
+
+  it("skips disabled tabs during keyboard navigation", async () => {
+    const handleChange = vi.fn();
+    const user = userEvent.setup();
+    render(
+      <Tabs
+        tabs={[tabs[0]!, { ...tabs[1]!, disabled: true }, { label: "Tab 3", value: "tab3" }]}
+        value="tab1"
+        onChange={handleChange}
+      />,
+    );
+    screen.getByRole("tab", { name: "Tab 1" }).focus();
+    await user.keyboard("{ArrowRight}");
+    expect(screen.getByRole("tab", { name: "Tab 3" })).toHaveFocus();
+    expect(handleChange).toHaveBeenCalledWith("tab3");
+  });
+
   it("forwards custom className", () => {
     render(
       <Tabs tabs={tabs} value="tab1" onChange={() => {}} className="custom" />,

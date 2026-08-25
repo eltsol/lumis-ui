@@ -11,7 +11,7 @@ describe("TextField", () => {
 
   it("renders label when provided", () => {
     render(<TextField label="Username" />);
-    expect(screen.getByText("Username")).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: "Username" })).toBeInTheDocument();
   });
 
   it("renders helper text", () => {
@@ -21,7 +21,10 @@ describe("TextField", () => {
 
   it("renders error message when error is true", () => {
     render(<TextField error errorMessage="Username is required" />);
-    expect(screen.getByText("Username is required")).toBeInTheDocument();
+    expect(screen.getByRole("textbox")).toHaveAttribute("aria-invalid", "true");
+    expect(screen.getByRole("textbox")).toHaveAccessibleDescription(
+      "Username is required",
+    );
   });
 
   it("does not render helper text when error is true", () => {

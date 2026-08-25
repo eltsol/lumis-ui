@@ -15,7 +15,7 @@ describe("Select", () => {
 
   it("renders label when provided", () => {
     render(<Select label="Choose" options={options} />);
-    expect(screen.getByText("Choose")).toBeInTheDocument();
+    expect(screen.getByRole("combobox", { name: "Choose" })).toBeInTheDocument();
   });
 
   it("renders placeholder option", () => {
@@ -36,7 +36,8 @@ describe("Select", () => {
 
   it("renders error message when error is true", () => {
     render(<Select error errorMessage="Required" options={options} />);
-    expect(screen.getByText("Required")).toBeInTheDocument();
+    expect(screen.getByRole("combobox")).toHaveAttribute("aria-invalid", "true");
+    expect(screen.getByRole("combobox")).toHaveAccessibleDescription("Required");
   });
 
   it("does not render helper text when error is true", () => {

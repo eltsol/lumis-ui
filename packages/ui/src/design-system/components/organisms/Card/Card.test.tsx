@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { describe, it, expect } from "vitest";
+import userEvent from "@testing-library/user-event";
+import { describe, it, expect, vi } from "vitest";
 import { Card } from "./Card";
 
 describe("Card", () => {
@@ -38,5 +39,19 @@ describe("Card", () => {
   it("forwards custom props", () => {
     render(<Card data-testid="card">Content</Card>);
     expect(screen.getByTestId("card")).toBeInTheDocument();
+  });
+
+  it("supports keyboard activation when clickable", async () => {
+    const handleClick = vi.fn();
+    const user = userEvent.setup();
+    render(
+      <Card clickable aria-label="Open project" onClick={handleClick}>
+        Project
+      </Card>,
+    );
+    const card = screen.getByRole("button", { name: "Open project" });
+    card.focus();
+    await user.keyboard("{Enter}");
+    expect(handleClick).toHaveBeenCalledOnce();
   });
 });

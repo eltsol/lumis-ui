@@ -45,7 +45,7 @@ describe("Modal", () => {
     const handleClose = vi.fn();
     const user = userEvent.setup();
     render(<Modal isOpen onClose={handleClose} title="Test" />);
-    await user.click(screen.getByLabelText("Close"));
+    await user.click(screen.getByLabelText("Close dialog"));
     expect(handleClose).toHaveBeenCalled();
   });
 
@@ -92,5 +92,24 @@ describe("Modal", () => {
   it("applies size class", () => {
     render(<Modal isOpen onClose={() => {}} size="lg" />);
     expect(document.querySelector(".modal--lg")).toBeInTheDocument();
+  });
+
+  it("exposes labelled modal dialog semantics", () => {
+    render(<Modal isOpen onClose={() => {}} title="Profile" description="Edit your details" />);
+    expect(screen.getByRole("dialog", { name: "Profile" })).toHaveAccessibleDescription(
+      "Edit your details",
+    );
+  });
+
+  it("traps focus inside the modal", async () => {
+    render(
+      <Modal isOpen onClose={() => {}} title="Profile">
+        <button>Save</button>
+      </Modal>,
+    );
+    const closeButton = screen.getByRole("button", { name: "Close dialog" });
+    closeButton.focus();
+    await userEvent.setup().keyboard("{Shift>}{Tab}{/Shift}");
+    expect(screen.getByRole("button", { name: "Save" })).toHaveFocus();
   });
 });
