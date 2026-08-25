@@ -1,22 +1,22 @@
 # Lumis UI
 
-Elena Tsolakou's portfolio and component system, focused on design systems and
-UI engineering.
+Elena Tsolakou's portfolio and design system, focused on accessible UI
+engineering and scalable component architecture.
 
-## What is in this repository?
+## Project structure
 
 ```text
-apps/portfolio/     Portfolio website
-packages/ui/        Components, tests, and Storybook documentation
-packages/tokens/    Design tokens and theme definitions
+app/                    Next.js portfolio
+src/design-system/      Components, tokens, themes, and Storybook docs
+.storybook/             Storybook configuration
 ```
 
-The remaining configuration packages are shared by the portfolio and component
-system. Turborepo currently coordinates their development and build commands.
+Everything now lives in one project. There are no workspaces or Turborepo
+commands to manage.
 
 ## Get started
 
-Install dependencies once from the repository root:
+Install dependencies once:
 
 ```bash
 npm install
@@ -41,12 +41,12 @@ Open [http://localhost:6006](http://localhost:6006).
 ## Useful commands
 
 ```bash
-npm run dev          # Start the portfolio
-npm run build        # Build the portfolio
-npm run test         # Run component unit tests
-npm run lint         # Lint all workspaces
-npm run check-types  # Check TypeScript across the repository
+npm run build            # Build the portfolio
+npm run build-storybook  # Build Storybook
+npm run test             # Run component unit tests
+npm run test:stories     # Run Storybook browser tests
+npm run lint             # Lint the project
+npm run check-types      # Check TypeScript
 ```
 
-Run all commands from the repository root. You do not need a global Turborepo
-installation.
+Run every command from the repository root.
