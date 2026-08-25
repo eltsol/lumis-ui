@@ -14,6 +14,7 @@ export default [
   globalIgnores([
     ".next/**",
     "out/**",
+    "dist/**",
     "build/**",
     "coverage/**",
     "storybook-static/**",

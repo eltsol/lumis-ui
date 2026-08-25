@@ -62,6 +62,7 @@ export default function Page() {
               <Typography className={styles.heroText}>I&apos;m Elena Tsolakou. I build accessible design systems that connect design and engineering, helping teams create cohesive digital products with confidence.</Typography>
               <Grid direction="row" gap="sm" wrap className={styles.heroActions}>
                 <Button href="#work" size="lg" trailingIcon={<Arrow direction="down" />}>Explore Lumis UI</Button>
+                <Button href="/storybook/" variant="secondary" size="lg">View Storybook</Button>
                 <Button href="https://github.com/eltsol/lumis-ui" target="_blank" rel="noreferrer" aria-label="View Lumis UI source on GitHub (opens in a new tab)" variant="secondary" size="lg" trailingIcon={<Arrow direction="external" />}>View source</Button>
               </Grid>
             </Grid>
