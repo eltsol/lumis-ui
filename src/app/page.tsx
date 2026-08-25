@@ -116,7 +116,7 @@ export default function Page() {
                 <Divider />
                 <Grid columns="1.2fr 1fr" gap="xl" className={styles.projectGrid}>
                   <Grid gap="sm"><Badge size="sm">Lumis UI</Badge><Typography variant="h2" className={styles.projectTitle}>Foundations for cohesive product experiences.</Typography></Grid>
-                  <Grid gap="lg" align="start"><Typography>A themeable React design system covering foundations, accessible components, documentation, and testing. Every layer is designed to make consistency easier to achieve and maintain.</Typography><Button href="#architecture" variant="ghost" trailingIcon={<Arrow />}>Explore the architecture</Button></Grid>
+                  <Grid gap="lg" align="start"><Typography>A themeable React design system covering foundations, accessible components, documentation, and testing. Every layer is designed to make consistency easier to achieve and maintain.</Typography><Button href="/work/lumis-ui" variant="ghost" trailingIcon={<Arrow />}>Read the case study</Button></Grid>
                 </Grid>
               </Grid>
               <div className={styles.componentCanvas}>
