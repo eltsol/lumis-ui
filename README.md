@@ -6,8 +6,9 @@ engineering and scalable component architecture.
 ## Project structure
 
 ```text
-app/                    Next.js portfolio
-src/design-system/      Components, tokens, themes, and Storybook docs
+src/
+  app/                  Next.js portfolio
+  design-system/        Components, tokens, themes, and Storybook docs
 .storybook/             Storybook configuration
 ```
 
