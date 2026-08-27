@@ -3,8 +3,6 @@
 An accessible, themeable React design system built by Elena Tsolakou to
 explore the engineering decisions behind scalable product interfaces.
 
-[View the portfolio](https://elena-tsolakou-lumis-ui.el-tsolakou.chatgpt.site) ·
-[Explore Storybook](https://elena-tsolakou-lumis-ui.el-tsolakou.chatgpt.site/storybook/) ·
 [Browse the source](https://github.com/eltsol/lumis-ui)
 
 ## Why I built it
